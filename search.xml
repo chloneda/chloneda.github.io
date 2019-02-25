@@ -2,7 +2,13 @@
 <search>
   <entry>
     <title><![CDATA[Hello Chloneda]]></title>
-    <url>%2F2019%2F02%2F25%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to chloneda‘s blog!This is my very first post.You can check the Hexo official website and the Markdown website for related commands and syntax. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <url>%2F2019%2F02%2F26%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to chloneda‘s blog!This is my very first post.You can check the Hexo official website and the Markdown website for related commands and syntax. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Other reference website: NexT Font Awesome. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>Test</category>
+      </categories>
+      <tags>
+        <tag>Test</tag>
+      </tags>
   </entry>
 </search>
