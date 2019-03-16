@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Welcome to chloneda‘s blog!This is my very first post.You can check the Hexo official website and the Markdown website for related commands and syntax.  Check documentation for more info. If you get a">
-<meta name="keywords" content="Test">
+  <meta name="description" content="注：本文转载自南轲梦 上篇文章《深入浅出Mybatis系列（三）—配置详解之properties与environments（mybatis源码篇）》 介绍了properties与environments， 本篇继续讲剩下的配置节点之一：typeAliases。 typeAliases节点主要用来设置别名，其实这是挺好用的一个功能， 通过配置别名，我们不用再指定完整的包名，并且还能取别名。 例如：">
+<meta name="keywords" content="Mybatis,Source code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello Chloneda">
-<meta property="og:url" content="https://chloneda.github.io/blog/hello-chloneda/index.html">
+<meta property="og:title" content="深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）">
+<meta property="og:url" content="https://chloneda.github.io/blog/mybatis-4/index.html">
 <meta property="og:site_name" content="Chloneda">
-<meta property="og:description" content="Welcome to chloneda‘s blog!This is my very first post.You can check the Hexo official website and the Markdown website for related commands and syntax.  Check documentation for more info. If you get a">
+<meta property="og:description" content="注：本文转载自南轲梦 上篇文章《深入浅出Mybatis系列（三）—配置详解之properties与environments（mybatis源码篇）》 介绍了properties与environments， 本篇继续讲剩下的配置节点之一：typeAliases。 typeAliases节点主要用来设置别名，其实这是挺好用的一个功能， 通过配置别名，我们不用再指定完整的包名，并且还能取别名。 例如：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T07:55:10.137Z">
+<meta property="og:updated_time" content="2019-03-16T14:31:09.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello Chloneda">
-<meta name="twitter:description" content="Welcome to chloneda‘s blog!This is my very first post.You can check the Hexo official website and the Markdown website for related commands and syntax.  Check documentation for more info. If you get a">
+<meta name="twitter:title" content="深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）">
+<meta name="twitter:description" content="注：本文转载自南轲梦 上篇文章《深入浅出Mybatis系列（三）—配置详解之properties与environments（mybatis源码篇）》 介绍了properties与environments， 本篇继续讲剩下的配置节点之一：typeAliases。 typeAliases节点主要用来设置别名，其实这是挺好用的一个功能， 通过配置别名，我们不用再指定完整的包名，并且还能取别名。 例如：">
 
 
 
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="https://chloneda.github.io/blog/hello-chloneda/">
+  <link rel="canonical" href="https://chloneda.github.io/blog/mybatis-4/">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>Hello Chloneda | Chloneda</title>
+  <title>深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇） | Chloneda</title>
   
 
 
@@ -392,7 +392,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/hello-chloneda/">
+    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/mybatis-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chloneda">
@@ -409,7 +409,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Hello Chloneda
+          <h2 class="post-title" itemprop="name headline">深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）
 
               
             
@@ -435,7 +435,7 @@
                 
               
 
-              <time title="创建时间：2019-03-16 15:55:10" itemprop="dateCreated datePublished" datetime="2019-03-16T15:55:10+08:00">2019-03-16</time>
+              <time title="创建时间：2019-03-16 22:31:09" itemprop="dateCreated datePublished" datetime="2019-03-16T22:31:09+08:00">2019-03-16</time>
             
 
             
@@ -453,7 +453,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Test/" itemprop="url" rel="index"><span itemprop="name">Test</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a></span>
 
                 
                 
@@ -461,9 +461,6 @@
             </span>
           
 
-          
-            
-            
           
 
           
@@ -495,21 +492,20 @@
       
 
       
-        <p>Welcome to <a href="https://chloneda.github.io/">chloneda</a>‘s blog!This is my very first post.You can check the <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> official website and the <a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">Markdown</a> website for related commands and syntax. </p>
-<p>Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Other-reference-website"><a href="#Other-reference-website" class="headerlink" title="Other reference website"></a>Other reference website</h3><ul>
-<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a></li>
-<li><a href="http://www.bitbug.net/" target="_blank" rel="noopener">比特虫</a></li>
-<li><a href="http://fontawesome.dashgame.com/" target="_blank" rel="noopener">Font Awesome</a></li>
-</ul>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>注：本文转载自<a href="https://www.cnblogs.com/dongying/p/4037678.html" target="_blank" rel="noopener">南轲梦</a></p>
+<p>上篇文章《深入浅出Mybatis系列（三）—配置详解之properties与environments（mybatis源码篇）》 介绍了properties与environments， 本篇继续讲剩下的配置节点之一：typeAliases。 typeAliases节点主要用来设置别名，其实这是挺好用的一个功能， 通过配置别名，我们不用再指定完整的包名，并且还能取别名。</p>
+<p>例如： 我们在使用 com.demo.entity. UserEntity 的时候，我们可以直接配置一个别名user, 这样以后在配置文件中要使用到com.demo.entity. UserEntity的时候，直接使用User即可。</p>
+<p>就以上例为例，我们来实现一下，看看typeAliases的配置方法:</p>
+<h1 id="typeAliases配置"><a href="#typeAliases配置" class="headerlink" title="typeAliases配置"></a>typeAliases配置</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">      通过package, 可以直接指定package的名字， mybatis会自动扫描你指定包下面的javabean,</span></span><br><span class="line"><span class="comment">      并且默认设置一个别名，默认的名字为： javabean 的首字母小写的非限定类名来作为它的别名。</span></span><br><span class="line"><span class="comment">      也可在javabean 加上注解@Alias 来自定义别名， 例如： @Alias(user) </span></span><br><span class="line"><span class="comment">      &lt;package name="com.dy.entity"/&gt;</span></span><br><span class="line"><span class="comment">       --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"UserEntity"</span> <span class="attr">type</span>=<span class="string">"com.dy.entity.User"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  ......</span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>再写一段测试代码，看看有没生效：（我只写一段伪代码）<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Configuration con = sqlSessionFactory.getConfiguration();</span><br><span class="line">Map&lt;String, Class&lt;?&gt;&gt; typeMap = con.getTypeAliasRegistry().getTypeAliases();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">Entry</span>&lt;String, Class&lt;?&gt;&gt; <span class="keyword">entry</span>: typeMap.entrySet()) &#123;</span><br><span class="line">    System.<span class="keyword">out</span>.println(<span class="keyword">entry</span>.getKey() + <span class="string">" ================&gt; "</span> + <span class="keyword">entry</span>.getValue().getSimpleName());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面给大家简单介绍了typeAliases的用法， 接下来就看看Mybatis中的源码了。</p>
+<p>老规矩，先从对xml的解析讲起：</p>
+<h1 id="typeAliases源码"><a href="#typeAliases源码" class="headerlink" title="typeAliases源码"></a>typeAliases源码</h1><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解析typeAliases节点</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">typeAliasesElement</span>(<span class="params">XNode parent</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (parent != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (XNode child : parent.getChildren()) &#123;</span><br><span class="line">        <span class="comment">//如果子节点是package, 那么就获取package节点的name属性， mybatis会扫描指定的package</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"package"</span>.<span class="keyword">equals</span>(child.getName())) &#123;</span><br><span class="line">          String typeAliasPackage = child.getStringAttribute(<span class="string">"name"</span>);</span><br><span class="line">          <span class="comment">//TypeAliasRegistry 负责管理别名， 这儿就是通过TypeAliasRegistry 进行别名注册， 下面就会看看TypeAliasRegistry源码</span></span><br><span class="line">          configuration.getTypeAliasRegistry().registerAliases(typeAliasPackage);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">//如果子节点是typeAlias节点，那么就获取alias属性和type的属性值</span></span><br><span class="line">          String <span class="keyword">alias</span> = child.getStringAttribute(<span class="string">"alias"</span>);</span><br><span class="line">          String type = child.getStringAttribute(<span class="string">"type"</span>);</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">            Class&lt;?&gt; clazz = Resources.classForName(type);</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">alias</span> == <span class="literal">null</span>) &#123;</span><br><span class="line">              typeAliasRegistry.registerAlias(clazz);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              typeAliasRegistry.registerAlias(<span class="keyword">alias</span>, clazz);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> BuilderException(<span class="string">"Error registering typeAlias for '"</span> + <span class="keyword">alias</span> + <span class="string">"'. Cause: "</span> + e, e);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>重要的源码在这儿!</p>
+<h1 id="TypeAliasRegistry源码"><a href="#TypeAliasRegistry源码" class="headerlink" title="TypeAliasRegistry源码"></a>TypeAliasRegistry源码</h1><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> TypeAliasRegistry &#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//这就是核心所在啊， 原来别名就仅仅通过一个HashMap来实现， key为别名， value就是别名对应的类型（class对象）</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;String, <span class="keyword">Class</span>&lt;?&gt;&gt; TYPE_ALIASES = <span class="keyword">new</span> HashMap&lt;String, <span class="keyword">Class</span>&lt;?&gt;&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 以下就是mybatis默认为我们注册的别名</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> TypeAliasRegistry() &#123;</span><br><span class="line">    registerAlias(<span class="string">"string"</span>, String.<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    registerAlias(<span class="string">"byte"</span>, <span class="keyword">Byte</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"long"</span>, <span class="keyword">Long</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"short"</span>, <span class="keyword">Short</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"int"</span>, Integer.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"integer"</span>, Integer.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"double"</span>, <span class="keyword">Double</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"float"</span>, <span class="keyword">Float</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"boolean"</span>, <span class="keyword">Boolean</span>.<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    registerAlias(<span class="string">"byte[]"</span>, <span class="keyword">Byte</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"long[]"</span>, <span class="keyword">Long</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"short[]"</span>, <span class="keyword">Short</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"int[]"</span>, Integer[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"integer[]"</span>, Integer[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"double[]"</span>, <span class="keyword">Double</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"float[]"</span>, <span class="keyword">Float</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"boolean[]"</span>, <span class="keyword">Boolean</span>[].<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    registerAlias(<span class="string">"_byte"</span>, <span class="keyword">byte</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_long"</span>, <span class="keyword">long</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_short"</span>, <span class="keyword">short</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_int"</span>, <span class="keyword">int</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_integer"</span>, <span class="keyword">int</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_double"</span>, <span class="keyword">double</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_float"</span>, <span class="keyword">float</span>.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_boolean"</span>, <span class="keyword">boolean</span>.<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    registerAlias(<span class="string">"_byte[]"</span>, <span class="keyword">byte</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_long[]"</span>, <span class="keyword">long</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_short[]"</span>, <span class="keyword">short</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_int[]"</span>, <span class="keyword">int</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_integer[]"</span>, <span class="keyword">int</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_double[]"</span>, <span class="keyword">double</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_float[]"</span>, <span class="keyword">float</span>[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"_boolean[]"</span>, <span class="keyword">boolean</span>[].<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    registerAlias(<span class="string">"date"</span>, Date.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"decimal"</span>, BigDecimal.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"bigdecimal"</span>, BigDecimal.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"biginteger"</span>, BigInteger.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"object"</span>, Object.<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    registerAlias(<span class="string">"date[]"</span>, Date[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"decimal[]"</span>, BigDecimal[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"bigdecimal[]"</span>, BigDecimal[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"biginteger[]"</span>, BigInteger[].<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"object[]"</span>, Object[].<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    registerAlias(<span class="string">"map"</span>, Map.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"hashmap"</span>, HashMap.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"list"</span>, List.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"arraylist"</span>, ArrayList.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"collection"</span>, Collection.<span class="keyword">class</span>);</span><br><span class="line">    registerAlias(<span class="string">"iterator"</span>, Iterator.<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line">    registerAlias(<span class="string">"ResultSet"</span>, ResultSet.<span class="keyword">class</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 处理别名， 直接从保存有别名的hashMap中取出即可</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  @SuppressWarnings(<span class="string">"unchecked"</span>)</span><br><span class="line">  <span class="keyword">public</span> &lt;T&gt; <span class="keyword">Class</span>&lt;T&gt; resolveAlias(String string) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (string == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">      String key = string.toLowerCase(Locale.ENGLISH); <span class="comment">// issue #748</span></span><br><span class="line">      <span class="keyword">Class</span>&lt;T&gt; value;</span><br><span class="line">      <span class="keyword">if</span> (TYPE_ALIASES.containsKey(key)) &#123;</span><br><span class="line">        value = (<span class="keyword">Class</span>&lt;T&gt;) TYPE_ALIASES.get(key);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        value = (<span class="keyword">Class</span>&lt;T&gt;) Resources.classForName(string);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> value;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> TypeException(<span class="string">"Could not resolve type alias '"</span> + string + <span class="string">"'.  Cause: "</span> + e, e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 配置文件中配置为package的时候， 会调用此方法，根据配置的报名去扫描javabean ，然后自动注册别名</span></span><br><span class="line"><span class="comment">   * 默认会使用 Bean 的首字母小写的非限定类名来作为它的别名</span></span><br><span class="line"><span class="comment">   * 也可在javabean 加上注解@Alias 来自定义别名， 例如： @Alias(user)</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> registerAliases(String packageName)&#123;</span><br><span class="line">    registerAliases(packageName, Object.<span class="keyword">class</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> registerAliases(String packageName, <span class="keyword">Class</span>&lt;?&gt; superType)&#123;</span><br><span class="line">    ResolverUtil&lt;<span class="keyword">Class</span>&lt;?&gt;&gt; resolverUtil = <span class="keyword">new</span> ResolverUtil&lt;<span class="keyword">Class</span>&lt;?&gt;&gt;();</span><br><span class="line">    resolverUtil.<span class="keyword">find</span>(<span class="keyword">new</span> ResolverUtil.IsA(superType), packageName);</span><br><span class="line">    Set&lt;<span class="keyword">Class</span>&lt;? <span class="keyword">extends</span> <span class="keyword">Class</span>&lt;?&gt;&gt;&gt; typeSet = resolverUtil.getClasses();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">Class</span>&lt;?&gt; type : typeSet)&#123;</span><br><span class="line">      <span class="comment">// Ignore inner classes and interfaces (including package-info.java)</span></span><br><span class="line">      <span class="comment">// Skip also inner classes. See issue #6</span></span><br><span class="line">      <span class="keyword">if</span> (!type.isAnonymousClass() &amp;&amp; !type.isInterface() &amp;&amp; !type.isMemberClass()) &#123;</span><br><span class="line">        registerAlias(type);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> registerAlias(<span class="keyword">Class</span>&lt;?&gt; type) &#123;</span><br><span class="line">    String alias = type.getSimpleName();</span><br><span class="line">    Alias aliasAnnotation = type.getAnnotation(Alias.<span class="keyword">class</span>);</span><br><span class="line">    <span class="keyword">if</span> (aliasAnnotation != <span class="keyword">null</span>) &#123;</span><br><span class="line">      alias = aliasAnnotation.value();</span><br><span class="line">    &#125; </span><br><span class="line">    registerAlias(alias, type);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//这就是注册别名的本质方法， 其实就是向保存别名的hashMap新增值而已， 呵呵， 别名的实现太简单了，对吧</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> registerAlias(String alias, <span class="keyword">Class</span>&lt;?&gt; value) &#123;</span><br><span class="line">    <span class="keyword">if</span> (alias == <span class="keyword">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> TypeException(<span class="string">"The parameter alias cannot be null"</span>);</span><br><span class="line">    String key = alias.toLowerCase(Locale.ENGLISH); <span class="comment">// issue #748</span></span><br><span class="line">    <span class="keyword">if</span> (TYPE_ALIASES.containsKey(key) &amp;&amp; TYPE_ALIASES.get(key) != <span class="keyword">null</span> &amp;&amp; !TYPE_ALIASES.get(key).equals(value)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> TypeException(<span class="string">"The alias '"</span> + alias + <span class="string">"' is already mapped to the value '"</span> + TYPE_ALIASES.get(key).getName() + <span class="string">"'."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    TYPE_ALIASES.put(key, value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> registerAlias(String alias, String value) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      registerAlias(alias, Resources.classForName(value));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> TypeException(<span class="string">"Error registering type alias "</span>+alias+<span class="string">" for "</span>+value+<span class="string">". Cause: "</span> + e, e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 获取保存别名的HashMap, Configuration对象持有对TypeAliasRegistry的引用，因此，如果需要，我们可以通过Configuration对象获取</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> Map&lt;String, <span class="keyword">Class</span>&lt;?&gt;&gt; getTypeAliases() &#123;</span><br><span class="line">    <span class="keyword">return</span> Collections.unmodifiableMap(TYPE_ALIASES);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由源码可见，设置别名的原理就这么简单，Mybatis默认给我们设置了不少别名，在上面代码中都可以见到。</p>
+<p>好啦，本篇内容就是这么简单，到此为止。 下篇将继续讲解还没讲完的配置节点。</p>
+<hr>
 
       
     </div>
@@ -572,7 +568,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://chloneda.github.io/blog/hello-chloneda/" title="Hello Chloneda">https://chloneda.github.io/blog/hello-chloneda/</a>
+    <a href="https://chloneda.github.io/blog/mybatis-4/" title="深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）">https://chloneda.github.io/blog/mybatis-4/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -585,7 +581,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Test/" rel="tag"># Test</a>
+            <a href="/tags/Mybatis/" rel="tag"># Mybatis</a>
           
         </div>
       
@@ -598,14 +594,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/blog/mybatis-3/" rel="next" title="深入浅出Mybatis系列三-配置详解之properties与environments（mybatis源码篇）">
+                <i class="fa fa-chevron-left"></i> 深入浅出Mybatis系列三-配置详解之properties与environments（mybatis源码篇）
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/hexo-blog/" rel="prev" title="Github+Hexo一站式部署个人博客">
-                Github+Hexo一站式部署个人博客 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/mybatis-5/" rel="prev" title="深入浅出Mybatis系列五-TypeHandler简介及配置（mybatis源码篇）">
+                深入浅出Mybatis系列五-TypeHandler简介及配置（mybatis源码篇） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -627,10 +627,6 @@
 
           </div>
           
-
-  
-
-
 
         </div>
         
@@ -818,7 +814,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-reference-website"><span class="nav-number">1.1.</span> <span class="nav-text">Other reference website</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.2.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.3.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.4.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.5.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#typeAliases配置"><span class="nav-number">1.</span> <span class="nav-text">typeAliases配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typeAliases源码"><span class="nav-number">2.</span> <span class="nav-text">typeAliases源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TypeAliasRegistry源码"><span class="nav-number">3.</span> <span class="nav-text">TypeAliasRegistry源码</span></a></li></ol></div>
             
 
           </div>
@@ -994,8 +990,6 @@
 
   
 
-
-  
 
 
   
@@ -1390,13 +1384,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'Hello Chloneda'.length > 0
+      var isPost = '深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'Hello Chloneda'
+        var title = '深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

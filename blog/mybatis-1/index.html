@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="推荐博客云邪柳伟卫IIssNanLucida码农场Java译站你假笨@JVM纯洁的微笑JrossoverJie美团技术团队博客阿里中间件团队博客IT草根 技术网站GithubStackOverflowSegmentFault码云CSDNPro Git 高效工具VimBe JSONDillinger百度脑图UZER.ME鸠摩搜书">
-<meta name="keywords" content="Links">
-<meta property="og:type" content="website">
-<meta property="og:title" content="All links">
-<meta property="og:url" content="https://chloneda.github.io/links/index.html">
+  <meta name="description" content="注：本文转载自南轲梦 最近两年 springmvc + mybatis 的在这种搭配还是蛮火的，楼主我呢，也从来没真正去接触过mybatis, 趁近日得闲， 就去学习一下mybatis吧。 本次拟根据自己的学习进度，做一次关于mybatis 的一系列教程， 记录自己的学习历程， 同时也给还没接触过mybatis的朋友探一次道。本系列教程拟 由浅（使用）入深（分析mybatis源码实现），故可能需要">
+<meta name="keywords" content="Mybatis,Source code">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入浅出Mybatis系列一-Mybatis入门">
+<meta property="og:url" content="https://chloneda.github.io/blog/mybatis-1/index.html">
 <meta property="og:site_name" content="Chloneda">
-<meta property="og:description" content="推荐博客云邪柳伟卫IIssNanLucida码农场Java译站你假笨@JVM纯洁的微笑JrossoverJie美团技术团队博客阿里中间件团队博客IT草根 技术网站GithubStackOverflowSegmentFault码云CSDNPro Git 高效工具VimBe JSONDillinger百度脑图UZER.ME鸠摩搜书">
+<meta property="og:description" content="注：本文转载自南轲梦 最近两年 springmvc + mybatis 的在这种搭配还是蛮火的，楼主我呢，也从来没真正去接触过mybatis, 趁近日得闲， 就去学习一下mybatis吧。 本次拟根据自己的学习进度，做一次关于mybatis 的一系列教程， 记录自己的学习历程， 同时也给还没接触过mybatis的朋友探一次道。本系列教程拟 由浅（使用）入深（分析mybatis源码实现），故可能需要">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T12:14:39.154Z">
+<meta property="og:updated_time" content="2019-03-16T14:04:38.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All links">
-<meta name="twitter:description" content="推荐博客云邪柳伟卫IIssNanLucida码农场Java译站你假笨@JVM纯洁的微笑JrossoverJie美团技术团队博客阿里中间件团队博客IT草根 技术网站GithubStackOverflowSegmentFault码云CSDNPro Git 高效工具VimBe JSONDillinger百度脑图UZER.ME鸠摩搜书">
+<meta name="twitter:title" content="深入浅出Mybatis系列一-Mybatis入门">
+<meta name="twitter:description" content="注：本文转载自南轲梦 最近两年 springmvc + mybatis 的在这种搭配还是蛮火的，楼主我呢，也从来没真正去接触过mybatis, 趁近日得闲， 就去学习一下mybatis吧。 本次拟根据自己的学习进度，做一次关于mybatis 的一系列教程， 记录自己的学习历程， 同时也给还没接触过mybatis的朋友探一次道。本系列教程拟 由浅（使用）入深（分析mybatis源码实现），故可能需要">
 
 
 
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="https://chloneda.github.io/links/">
+  <link rel="canonical" href="https://chloneda.github.io/blog/mybatis-1/">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>All links | Chloneda</title>
+  <title>深入浅出Mybatis系列一-Mybatis入门 | Chloneda</title>
   
 
 
@@ -301,7 +301,7 @@
         
         
           
-          <li class="menu-item menu-item-links menu-item-active">
+          <li class="menu-item menu-item-links">
 
     
     
@@ -330,31 +330,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -403,57 +378,260 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/mybatis-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chloneda">
+      <meta itemprop="description" content="Less is more">
+      <meta itemprop="image" content="https://chloneda.github.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chloneda">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">All links
-
-</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h2 id="推荐博客"><a href="#推荐博客" class="headerlink" title="推荐博客"></a>推荐博客</h2><p><a href="http://wuchong.me/" target="_blank" rel="noopener">云邪</a><br><a href="https://waylau.com/" target="_blank" rel="noopener">柳伟卫</a><br><a href="https://iissnan.com/" target="_blank" rel="noopener">IIssNan</a><br><a href="http://lucida.me/" target="_blank" rel="noopener">Lucida</a><br><a href="http://www.hankcs.com/" target="_blank" rel="noopener">码农场</a><br><a href="http://it.deepinmind.com/" target="_blank" rel="noopener">Java译站</a><br><a href="http://lovestblog.cn/" target="_blank" rel="noopener">你假笨@JVM</a><br><a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a><br><a href="https://crossoverjie.top/" target="_blank" rel="noopener">JrossoverJie</a><br><a href="https://tech.meituan.com/" target="_blank" rel="noopener">美团技术团队博客</a><br><a href="http://jm.taobao.org/" target="_blank" rel="noopener">阿里中间件团队博客</a><br><a href="http://codepub.cn/" target="_blank" rel="noopener">IT草根</a></p>
-<h2 id="技术网站"><a href="#技术网站" class="headerlink" title="技术网站"></a>技术网站</h2><p><a href="https://github.com/" target="_blank" rel="noopener">Github</a><br><a href="https://stackoverflow.com/" target="_blank" rel="noopener">StackOverflow</a><br><a href="https://segmentfault.com/" target="_blank" rel="noopener">SegmentFault</a><br><a href="https://gitee.com/" target="_blank" rel="noopener">码云</a><br><a href="https://www.csdn.net/" target="_blank" rel="noopener">CSDN</a><br><a href="http://iissnan.com/progit/" target="_blank" rel="noopener">Pro Git</a></p>
-<h2 id="高效工具"><a href="#高效工具" class="headerlink" title="高效工具"></a>高效工具</h2><p><a href="https://vim.ink/" target="_blank" rel="noopener">Vim</a><br><a href="http://www.bejson.com/" target="_blank" rel="noopener">Be JSON</a><br><a href="https://dillinger.io/" target="_blank" rel="noopener">Dillinger</a><br><a href="http://naotu.baidu.com/" target="_blank" rel="noopener">百度脑图</a><br><a href="https://www.uzer.me/" target="_blank" rel="noopener">UZER.ME</a><br><a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">鸠摩搜书</a></p>
+          <h2 class="post-title" itemprop="name headline">深入浅出Mybatis系列一-Mybatis入门
 
+              
+            
+          </h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-16 22:04:38" itemprop="dateCreated datePublished" datetime="2019-03-16T22:04:38+08:00">2019-03-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>注：本文转载自<a href="https://www.cnblogs.com/dongying/p/4031382.html" target="_blank" rel="noopener">南轲梦</a></p>
+<p>最近两年 springmvc + mybatis 的在这种搭配还是蛮火的，楼主我呢，也从来没真正去接触过mybatis, 趁近日得闲， 就去学习一下mybatis吧。 本次拟根据自己的学习进度，做一次关于mybatis 的一系列教程， 记录自己的学习历程， 同时也给还没接触过mybatis的朋友探一次道。本系列教程拟 由浅（使用）入深（分析mybatis源码实现），故可能需要好长几天才能更新完。好啦，下面就开始本次的mybatis 学习之旅啦， 本次为第一篇教程， 就先简单地写个demo, 一起来认识一下mybatis吧。　　</p>
+<p>为了方便，我使用了maven，至于maven怎么使用，我就不做介绍了。没用过maven的，也不影响阅读。</p>
+<h1 id="Mybatis环境搭建"><a href="#Mybatis环境搭建" class="headerlink" title="Mybatis环境搭建"></a>Mybatis环境搭建</h1><p>新建web项目， 添加依赖包：mybatis包、数据库驱动包(我使用的是mysql)、日志包(我使用的是log4j)， 由于我的是maven项目， 那么添加依赖包就简单了，直接在pom.xml添加依赖即可。</p>
+<p><strong>pom.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 添加junit --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 添加log4j --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 添加mybatis --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 添加mysql驱动 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="配置mybatis"><a href="#配置mybatis" class="headerlink" title="配置mybatis"></a>配置mybatis</h1><p>在classpath建立一个用于配置log4j的配置文件log4j.properties, 再建立一个用于配置Mybatis的配置文件configuration.xml（文件可随便命名）。log4j的配置，我就不多说，这儿主要说一下configuration.xml:</p>
+<p><strong>configuration.xml</strong><br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span></span><br><span class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE configuration</span></span></span><br><span class="line"><span class="xml">  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</span></span><br><span class="line"><span class="xml">  "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- 指定properties配置文件， 我这里面配置的是数据库相关 --&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"dbConfig.properties"</span>&gt;</span><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span></span><br><span class="line"><span class="xml">  </span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- 指定Mybatis使用log4j --&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span></span><br><span class="line"><span class="xml">     <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">"LOG4J"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span></span><br><span class="line"><span class="xml">      </span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="comment">&lt;!--</span></span></span><br><span class="line"><span class="xml">          如果上面没有指定数据库配置的properties文件，那么此处可以这样直接配置 </span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://localhost:3306/test1"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"root"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">         --&gt;</span></span><br><span class="line"><span class="xml">         </span></span><br><span class="line"><span class="xml">         <span class="comment">&lt;!-- 上面指定了数据库配置文件， 配置文件里面也是对应的这四个属性 --&gt;</span></span></span><br><span class="line"><span class="xml">         <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$</span></span></span><span class="template-variable">&#123;driver&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">         <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$</span></span></span><span class="template-variable">&#123;url&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">         <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$</span></span></span><span class="template-variable">&#123;username&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">         <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$</span></span></span><span class="template-variable">&#123;password&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">         </span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span></span><br><span class="line"><span class="xml">  </span></span><br><span class="line"><span class="xml">  <span class="comment">&lt;!-- 映射文件，mybatis精髓， 后面才会细讲 --&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"com/dy/dao/userDao-mapping.xml"</span>/&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span></span><br><span class="line"><span class="xml">  </span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h1 id="开始写Demo"><a href="#开始写Demo" class="headerlink" title="开始写Demo"></a>开始写Demo</h1><p>首先，在mysql数据库test1建立一张表user。</p>
+<p>先编写一个实体类User: User类用于与User表相对应。</p>
+<p><strong>User</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> deleteFlag;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//setter和getter方法省略...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>再编写一个UserDao 接口：</p>
+<p><strong>UserDao</strong><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>UserDao &#123;</span><br><span class="line">    public void insert(User user);</span><br><span class="line">    public<span class="built_in"> User </span>findUserById (int userId);</span><br><span class="line">    public List&lt;User&gt; findAllUsers();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>再编写一个userDao-mapping.xml （可随便命名）:</p>
+<p><strong>userDao-mapping.xml</strong><br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>   </span></span><br><span class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE mapper   </span></span></span><br><span class="line"><span class="xml">PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  </span></span><br><span class="line"><span class="xml">"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"&gt; </span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.dy.dao.UserDao"</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findUserById"</span> <span class="attr">resultType</span>=<span class="string">"com.dy.entity.User"</span> &gt;</span> </span></span><br><span class="line"><span class="xml">      select * from user where id = #</span><span class="template-variable">&#123;id&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>userDao-mapping.xml相当于是UserDao的实现， 同时也将User实体类与数据表User成功关联起来。</p>
+<h1 id="测试代码Demo"><a href="#测试代码Demo" class="headerlink" title="测试代码Demo"></a>测试代码Demo</h1><p><strong>UserDaoTest</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDaoTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findUserById</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        SqlSession sqlSession = getSessionFactory().openSession();  </span><br><span class="line">        UserDao userMapper = sqlSession.getMapper(UserDao.class);  </span><br><span class="line">        User user = userMapper.findUserById(<span class="number">2</span>);  </span><br><span class="line">        Assert.assertNotNull(<span class="string">"没找到数据"</span>, user);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//Mybatis 通过SqlSessionFactory获取SqlSession, 然后才能通过SqlSession与数据库进行交互</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> SqlSessionFactory <span class="title">getSessionFactory</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        SqlSessionFactory sessionFactory = <span class="keyword">null</span>;  </span><br><span class="line">        String resource = <span class="string">"configuration.xml"</span>;  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            sessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(Resources  </span><br><span class="line">                    .getResourceAsReader(resource));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> sessionFactory;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>好啦，这样一个简单的mybatis 的demo就能成功运行啦。通过这个demo, 应该你就也能初步看出mybatis的运行机制，如果不清楚，也没关系。从下一篇文章开始，才开始正式讲解mybatis。</p>
+<hr>
+
       
     </div>
+
     
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是对我最大的鼓励</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="chloneda 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="chloneda 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
 
 
 
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>chloneda</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
     
+    <a href="https://chloneda.github.io/blog/mybatis-1/" title="深入浅出Mybatis系列一-Mybatis入门">https://chloneda.github.io/blog/mybatis-1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
-    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mybatis/" rel="tag"># Mybatis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/hexo-blog/" rel="next" title="Github+Hexo一站式部署个人博客">
+                <i class="fa fa-chevron-left"></i> Github+Hexo一站式部署个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/mybatis-2/" rel="prev" title="深入浅出Mybatis系列二-配置简介（mybatis源码篇）">
+                深入浅出Mybatis系列二-配置简介（mybatis源码篇） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
           </div>
           
-
-  
-
-
 
         </div>
         
@@ -641,7 +819,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐博客"><span class="nav-number">1.</span> <span class="nav-text">推荐博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术网站"><span class="nav-number">2.</span> <span class="nav-text">技术网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高效工具"><span class="nav-number">3.</span> <span class="nav-text">高效工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybatis环境搭建"><span class="nav-number">1.</span> <span class="nav-text">Mybatis环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置mybatis"><span class="nav-number">2.</span> <span class="nav-text">配置mybatis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始写Demo"><span class="nav-number">3.</span> <span class="nav-text">开始写Demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试代码Demo"><span class="nav-number">4.</span> <span class="nav-text">测试代码Demo</span></a></li></ol></div>
             
 
           </div>
@@ -817,8 +995,6 @@
 
   
 
-
-  
 
 
   
@@ -1213,13 +1389,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'All links'.length > 0
+      var isPost = '深入浅出Mybatis系列一-Mybatis入门'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'All links'
+        var title = '深入浅出Mybatis系列一-Mybatis入门'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))

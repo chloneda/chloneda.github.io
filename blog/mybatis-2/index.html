@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="Less is more">
-<meta name="keywords" content="hello">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chloneda">
-<meta property="og:url" content="https://chloneda.github.io/archives/index.html">
+  <meta name="description" content="注：本文转载自南轲梦 上篇文章《深入浅出Mybatis系列（一）—Mybatis入门》， 写了一个Demo简单体现了一下Mybatis的流程。本次，将简单介绍一下Mybatis的配置文件： 上次例子中，我们以 SqlSessionFactoryBuilder 去创建 SqlSessionFactory,  那么，我们就先从SqlSessionFactoryBuilder入手， 咱们先看看源码是怎么">
+<meta name="keywords" content="Mybatis,Source code">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入浅出Mybatis系列二-配置简介（mybatis源码篇）">
+<meta property="og:url" content="https://chloneda.github.io/blog/mybatis-2/index.html">
 <meta property="og:site_name" content="Chloneda">
-<meta property="og:description" content="Less is more">
+<meta property="og:description" content="注：本文转载自南轲梦 上篇文章《深入浅出Mybatis系列（一）—Mybatis入门》， 写了一个Demo简单体现了一下Mybatis的流程。本次，将简单介绍一下Mybatis的配置文件： 上次例子中，我们以 SqlSessionFactoryBuilder 去创建 SqlSessionFactory,  那么，我们就先从SqlSessionFactoryBuilder入手， 咱们先看看源码是怎么">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-16T14:10:20.528Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chloneda">
-<meta name="twitter:description" content="Less is more">
+<meta name="twitter:title" content="深入浅出Mybatis系列二-配置简介（mybatis源码篇）">
+<meta name="twitter:description" content="注：本文转载自南轲梦 上篇文章《深入浅出Mybatis系列（一）—Mybatis入门》， 写了一个Demo简单体现了一下Mybatis的流程。本次，将简单介绍一下Mybatis的配置文件： 上次例子中，我们以 SqlSessionFactoryBuilder 去创建 SqlSessionFactory,  那么，我们就先从SqlSessionFactoryBuilder入手， 咱们先看看源码是怎么">
 
 
 
@@ -115,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="https://chloneda.github.io/archives/">
+  <link rel="canonical" href="https://chloneda.github.io/blog/mybatis-2/">
 
 
 
@@ -125,7 +126,7 @@
   };
 </script>
 
-  <title>归档 | Chloneda</title>
+  <title>深入浅出Mybatis系列二-配置简介（mybatis源码篇） | Chloneda</title>
   
 
 
@@ -173,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -232,7 +233,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -330,31 +331,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -400,393 +376,254 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/mybatis-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chloneda">
+      <meta itemprop="description" content="Less is more">
+      <meta itemprop="image" content="https://chloneda.github.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chloneda">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">深入浅出Mybatis系列二-配置简介（mybatis源码篇）
+
+              
+            
+          </h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-16 22:10:20" itemprop="dateCreated datePublished" datetime="2019-03-16T22:10:20+08:00">2019-03-16</time>
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 12 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
 
-        
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-10/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列十-SQL执行流程分析（源码篇）</span>
-            
-          </a>
-        
-      </h3>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T23:38:50+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-9/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列九-强大的动态SQL</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T23:25:04+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-8/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列八-mapper映射文件配置之select、resultMap</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T23:14:13+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>注：本文转载自<a href="https://www.cnblogs.com/dongying/p/4031613.html" target="_blank" rel="noopener">南轲梦</a></p>
+<p>上篇文章《深入浅出Mybatis系列（一）—Mybatis入门》， 写了一个Demo简单体现了一下Mybatis的流程。本次，将简单介绍一下Mybatis的配置文件：</p>
+<p>上次例子中，我们以 SqlSessionFactoryBuilder 去创建 SqlSessionFactory,  那么，我们就先从SqlSessionFactoryBuilder入手， 咱们先看看源码是怎么实现的：</p>
+<h1 id="SqlSessionFactoryBuilder源码"><a href="#SqlSessionFactoryBuilder源码" class="headerlink" title="SqlSessionFactoryBuilder源码"></a>SqlSessionFactoryBuilder源码</h1><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SqlSessionFactoryBuilder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//Reader读取mybatis配置文件，传入构造方法</span></span><br><span class="line">  <span class="comment">//除了Reader外，其实还有对应的inputStream作为参数的构造方法，</span></span><br><span class="line">  <span class="comment">//这也体现了mybatis配置的灵活性</span></span><br><span class="line">  <span class="keyword">public</span> <span class="function">SqlSessionFactory <span class="title">build</span><span class="params">(Reader reader)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">return</span> <span class="title">build</span><span class="params">(reader, <span class="keyword">null</span>, <span class="keyword">null</span>)</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="function">SqlSessionFactory <span class="title">build</span><span class="params">(Reader reader, String environment)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">return</span> <span class="title">build</span><span class="params">(reader, environment, <span class="keyword">null</span>)</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//mybatis配置文件 + properties, 此时mybatis配置文件中可以不配置properties，也能使用$&#123;&#125;形式</span></span><br><span class="line">  <span class="keyword">public</span> <span class="function">SqlSessionFactory <span class="title">build</span><span class="params">(Reader reader, Properties properties)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">return</span> <span class="title">build</span><span class="params">(reader, <span class="keyword">null</span>, properties)</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//通过XMLConfigBuilder解析mybatis配置，然后创建SqlSessionFactory对象</span></span><br><span class="line">  <span class="keyword">public</span> <span class="function">SqlSessionFactory <span class="title">build</span><span class="params">(Reader reader, String environment, Properties properties)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      XMLConfigBuilder parser = <span class="keyword">new</span> XMLConfigBuilder(reader, environment, properties);</span><br><span class="line">      <span class="comment">//下面看看这个方法的源码</span></span><br><span class="line">      <span class="keyword">return</span> build(parser.parse());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      <span class="keyword">throw</span> ExceptionFactory.wrapException(<span class="string">"Error building SqlSession."</span>, e);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      ErrorContext.instance().reset();</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        reader.close();</span><br><span class="line">      &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        <span class="comment">// Intentionally ignore. Prefer previous error.</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="function">SqlSessionFactory <span class="title">build</span><span class="params">(Configuration config)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> DefaultSqlSessionFactory(config);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过源码，我们可以看到SqlSessionFactoryBuilder 通过XMLConfigBuilder 去解析我们传入的mybatis的配置文件， 下面就接着看看 XMLConfigBuilder 部分源码：</p>
+<h1 id="XMLConfigBuilder源码"><a href="#XMLConfigBuilder源码" class="headerlink" title="XMLConfigBuilder源码"></a>XMLConfigBuilder源码</h1><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * mybatis 配置文件解析</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XMLConfigBuilder</span> <span class="keyword"><span class="keyword">extends</span> <span class="type">BaseBuilder</span></span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> XMLConfigBuilder(InputStream inputStream, <span class="keyword">String</span> environment, Properties props) &#123;</span><br><span class="line">    <span class="built_in">this</span>(<span class="keyword">new</span> <span class="type">XPathParser</span>(inputStream, <span class="literal">true</span>, props, <span class="keyword">new</span> <span class="type">XMLMapperEntityResolver</span>()), environment, props);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> XMLConfigBuilder(XPathParser parser, <span class="keyword">String</span> environment, Properties props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(<span class="keyword">new</span> <span class="type">Configuration</span>());</span><br><span class="line">    ErrorContext.instance().resource(<span class="string">"SQL Mapper Configuration"</span>);</span><br><span class="line">    <span class="built_in">this</span>.configuration.setVariables(props);</span><br><span class="line">    <span class="built_in">this</span>.parsed = <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">this</span>.environment = environment;</span><br><span class="line">    <span class="built_in">this</span>.parser = parser;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//外部调用此方法对mybatis配置文件进行解析</span></span><br><span class="line">  <span class="keyword">public</span> Configuration parse() &#123;</span><br><span class="line">    <span class="keyword">if</span> (parsed) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="type">BuilderException</span>(<span class="string">"Each XMLConfigBuilder can only be used once."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    parsed = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">//从根节点configuration</span></span><br><span class="line">    parseConfiguration(parser.evalNode(<span class="string">"/configuration"</span>));</span><br><span class="line">    <span class="keyword">return</span> configuration;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//此方法就是解析configuration节点下的子节点</span></span><br><span class="line">  <span class="comment">//由此也可看出，我们在configuration下面能配置的节点为以下10个节点</span></span><br><span class="line">  <span class="keyword">private</span> void parseConfiguration(XNode root) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      propertiesElement(root.evalNode(<span class="string">"properties"</span>)); <span class="comment">//issue #117 read properties first</span></span><br><span class="line">      typeAliasesElement(root.evalNode(<span class="string">"typeAliases"</span>));</span><br><span class="line">      pluginElement(root.evalNode(<span class="string">"plugins"</span>));</span><br><span class="line">      objectFactoryElement(root.evalNode(<span class="string">"objectFactory"</span>));</span><br><span class="line">      objectWrapperFactoryElement(root.evalNode(<span class="string">"objectWrapperFactory"</span>));</span><br><span class="line">      settingsElement(root.evalNode(<span class="string">"settings"</span>));</span><br><span class="line">      environmentsElement(root.evalNode(<span class="string">"environments"</span>)); <span class="comment">// read it after objectFactory and objectWrapperFactory issue #631</span></span><br><span class="line">      databaseIdProviderElement(root.evalNode(<span class="string">"databaseIdProvider"</span>));</span><br><span class="line">      typeHandlerElement(root.evalNode(<span class="string">"typeHandlers"</span>));</span><br><span class="line">      mapperElement(root.evalNode(<span class="string">"mappers"</span>));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="type">BuilderException</span>(<span class="string">"Error parsing SQL Mapper Configuration. Cause: "</span> + e, e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过以上源码，我们就能看出，在mybatis的配置文件中：</p>
+<ol>
+<li><p>configuration节点为根节点。</p>
+</li>
+<li><p>在configuration节点之下，我们可以配置10个子节点， 分别为：properties、typeAliases、plugins、objectFactory、objectWrapperFactory、settings、environments、databaseIdProvider、typeHandlers、mappers。</p>
+</li>
+</ol>
+<p>本篇文章就先只介绍这些内容，接下来的文章将依次分析解析这个10个节点中比较重要的几个节点的源码，看看在解析这些节点的时候，到底做了些什么。</p>
+<hr>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-7/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列七-mapper映射文件配置之insert、update、delete</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T23:00:03+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-6/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列六-objectFactory、plugins、mappers简介与配置</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T22:49:42+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-5/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列五-TypeHandler简介及配置（mybatis源码篇）</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T22:39:13+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-4/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T22:31:09+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-3/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列三-配置详解之properties与environments（mybatis源码篇）</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T22:22:31+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-2/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列二-配置简介（mybatis源码篇）</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T22:10:20+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/blog/mybatis-1/" itemprop="url">
-            
-              <span itemprop="name">深入浅出Mybatis系列一-Mybatis入门</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T22:04:38+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是对我最大的鼓励</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="chloneda 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="chloneda 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>chloneda</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://chloneda.github.io/blog/mybatis-2/" title="深入浅出Mybatis系列二-配置简介（mybatis源码篇）">https://chloneda.github.io/blog/mybatis-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mybatis/" rel="tag"># Mybatis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/mybatis-1/" rel="next" title="深入浅出Mybatis系列一-Mybatis入门">
+                <i class="fa fa-chevron-left"></i> 深入浅出Mybatis系列一-Mybatis入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/mybatis-3/" rel="prev" title="深入浅出Mybatis系列三-配置详解之properties与environments（mybatis源码篇）">
+                深入浅出Mybatis系列三-配置详解之properties与environments（mybatis源码篇） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
@@ -811,8 +648,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -958,6 +804,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SqlSessionFactoryBuilder源码"><span class="nav-number">1.</span> <span class="nav-text">SqlSessionFactoryBuilder源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XMLConfigBuilder源码"><span class="nav-number">2.</span> <span class="nav-text">XMLConfigBuilder源码</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1114,6 +977,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
 
   
 
@@ -1518,13 +1385,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = ''.length > 0
-      var isArchive = 'true' === 'true'
+      var isPost = '深入浅出Mybatis系列二-配置简介（mybatis源码篇）'.length > 0
+      var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = ''
+        var title = '深入浅出Mybatis系列二-配置简介（mybatis源码篇）'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -1532,7 +1399,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("深入浅出Mybatis系列十-SQL执行流程分析（源码篇）");titles.push("深入浅出Mybatis系列九-强大的动态SQL");titles.push("深入浅出Mybatis系列八-mapper映射文件配置之select、resultMap");titles.push("深入浅出Mybatis系列七-mapper映射文件配置之insert、update、delete");titles.push("深入浅出Mybatis系列六-objectFactory、plugins、mappers简介与配置");titles.push("深入浅出Mybatis系列五-TypeHandler简介及配置（mybatis源码篇）");titles.push("深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）");titles.push("深入浅出Mybatis系列三-配置详解之properties与environments（mybatis源码篇）");titles.push("深入浅出Mybatis系列二-配置简介（mybatis源码篇）");titles.push("深入浅出Mybatis系列一-Mybatis入门");' //if you have a better way to get titles of posts, please change it
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
