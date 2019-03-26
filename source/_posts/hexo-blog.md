@@ -259,6 +259,7 @@ skip_render: README.md
 ```
 再次使用**hexo d**命令部署博客的时候就不会在渲染 README.md 这个文件。
 
+# 进阶配置
 ## 自定义网站头像
 自定义头像可以使用 **[比特虫](http://www.bitbug.net/)** 网站制作！
 
@@ -316,6 +317,27 @@ comments: false
 ---
 ```
 **注：其它自定义菜单也是类似步骤**
+
+## 增加背景音乐
+在本博客的**侧边栏**增加网易云音乐，生成音乐外链可参考**[链接](https://jingyan.baidu.com/article/4e5b3e19fe033691911e2466.html)** ，复制链接，将外链插入到Hexo根路径的侧边栏文件中：**/themes/next/layout/_macro/sidebar.swig**，即侧边栏友情链接**theme.links**这一项之后。
+```
+{% if theme.links %}
+    <div>
+      <div class="links-of-blogroll-title">
+       ....省略部分代码
+      </div>
+      <ul class="links-of-blogroll-list">
+        ....省略部分代码
+      </ul>
+    </div>
+{% endif %}
+
+    <div id="music163player">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 
+		src="//music.163.com/outchain/player?type=2&id=5239700&auto=0&height=66">
+	</iframe>
+    </div>
+```
 
 ## 添加打赏功能
 如今已进入知识付费时代，打赏是读者对笔者创造的最大支持，更是对劳动者的尊重。打赏功能具体步骤为：
