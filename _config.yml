@@ -96,4 +96,4 @@ theme: next
 deploy:
   type: git
   repo: git@github.com:chloneda/chloneda.github.io.git
-  branch: blog
+  branch: master
