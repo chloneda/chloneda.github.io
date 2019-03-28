@@ -275,8 +275,7 @@ favicon:
 ```
 
 ## 添加自定义页面[友链]
-**设置菜单项的显示中文文本**
-打开**themes/next/languages/zh-CN.yml**文件,搜索 menu 关键字，修改对应中文或者新增。
+**设置菜单项的显示中文文本**，打开**themes/next/languages/zh-CN.yml**文件,搜索 menu 关键字，修改对应中文或者新增。
 ```
 menu:
   home: 首页
@@ -384,34 +383,34 @@ permalink_defaults:
 
 ## Hexo博客备份
 利用github分支功能进行博客备份，思路说明:
-+ master分支：存放Hexo博客的源码文件(默认分支)。
-+ blog分支：存放博客的静态网页。
++ master分支：存放博客的静态网页(默认分支)。
++ hexo分支：存放Hexo博客的源码文件。
 
-**blog分支部署**
+**master分支部署**
 进入**站点配置文件**编辑，搜索deploy关键词：
 ```
 deploy:
   type: git
   repo: https://github.com/你的github用户名/你的github用户名.github.io.git
-  branch: blog
+  branch: master
 ```
 - 修改更新博客内容并保存。
 - 执行hexo clean清除本地旧代码。
-- 执行hexo g -d生成静态网站并部署到GitHub的blog分支上。
+- 执行hexo g -d生成静态网站并部署到GitHub的master分支上。
 
-**master分支配置**
-- 默认master分支，该分支为博客源码分支。
-- 使用git clone 你的github仓库路径， 拷贝源码仓库。
-- 修改hexo主配置_config.xml的deploy部分配置，设置静态页面的发布分支为blog。
+**hexo分支配置**
+- hexo分支，该分支为博客源码分支。
+- 使用git clone -b hexo 你的github仓库路径， 拷贝源码仓库。
+- 修改hexo主配置_config.xml的deploy部分配置，设置静态页面的发布分支为master。
 - 添加.gitignore文件，将静态网页的目录及其他无需提交的源文件及目录排除掉。
 
 **博客源码更新**
 在本地对博客进行修改后，提交hexo源代码：
 ```
-git checkout master
+git checkout hexo
 git add .
 git commit -m 'Code update'
-git push origin master
+git push origin hexo
 ```
 **发布hexo静态文件**
 hexo根目录依次执行以下命令：
@@ -421,7 +420,7 @@ hexo generate	或者   hexo g
 hexo deploy	或者   hexo d
 ```
 本地资料丢失或其他主机搭建博客步骤：
-+ 拷贝master分支源码到本地：git clone github项目地址.git。
++ 拷贝hexo分支源码到本地：git clone -b hexo github项目地址.git。
 + 安装hexo及各类插件。
 + 本地安装调试。
 
@@ -446,7 +445,7 @@ current_date=`date "+%Y-%m-%d %H:%M:%S"`
 git commit -m "Blog updated: $current_date"
 
 sleep 2
-git push origin master
+git push origin hexo
 
 echo "=====>Finish!<====="
 ```
