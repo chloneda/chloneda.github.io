@@ -12,7 +12,7 @@ comments: false
 # SqlSessionFactory 与 SqlSession
 通过前面的章节对于mybatis 的介绍及使用，大家都能体会到SqlSession的重要性了吧， 没错，从表面上来看，咱们都是通过SqlSession去执行sql语句（注意：是从表面看，实际的待会儿就会讲）。那么咱们就先看看是怎么获取SqlSession的吧：
 
-![SqlSessionFactory](https://chloneda.github.io/uploads/SqlSessionFactory.png)
+![SqlSessionFactory](/uploads/mybatis_SqlSessionFactory.png)
 
 首先，SqlSessionFactoryBuilder去读取mybatis的配置文件，然后build一个DefaultSqlSessionFactory。源码如下：
 ```
@@ -109,7 +109,7 @@ SqlSession咱们也拿到了，咱们可以调用SqlSession中一系列的select
 
 在mybatis中，通过MapperProxy动态代理咱们的dao， 也就是说， 当咱们执行自己写的dao里面的方法的时候，其实是对应的mapperProxy在代理。那么，咱们就看看怎么获取MapperProxy对象吧：
 
-![MapperProxy](https://chloneda.github.io/uploads/MapperProxy.png)
+![MapperProxy](/uploads/mybatis_MapperProxy.png)
 
 通过SqlSession从Configuration中获取。源码如下：
 ```
@@ -196,7 +196,7 @@ User insertUser = new User();
 
 # Excutor
 
-![Excutor](https://chloneda.github.io/uploads/Excutor.png)
+![Excutor](/uploads/mybatis_Excutor.png)
 
 接下来，咱们才要真正去看sql的执行过程了。
 
