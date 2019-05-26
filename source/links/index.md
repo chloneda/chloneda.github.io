@@ -21,6 +21,9 @@ date: 2019-02-24 00:08:17
 [美团技术团队博客](https://tech.meituan.com/)
 [阿里中间件团队博客](http://jm.taobao.org/)
 [IT草根](http://codepub.cn/)
+## 我的博客
+[Chloneda](https://www.cnblogs.com/chloneda/)
+[chloneda](https://chloneda.github.io/)
 ## 技术网站
 [Github](https://github.com/)
 [StackOverflow](https://stackoverflow.com/)
