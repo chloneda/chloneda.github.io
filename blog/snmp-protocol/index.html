@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="注：本文出自博主：chloneda SNMP概述SNMP(Simple Network Management Protocol):简单网络管理协议,是基于TCP/IP五层协议中的应用层协议。由于其简单可靠，提供了一种监控和管理网络设备的系统方法，因此受到了众多厂商的欢迎，成为了目前最为广泛的网管协议。 SNMP的基本思想：为不同种类、厂家、型号的设备，定义一个统一的接口和协议，使得管理员可以是使用">
+<meta name="keywords" content="SNMP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聊聊SNMP协议">
+<meta property="og:url" content="https://chloneda.github.io/blog/snmp-protocol/index.html">
+<meta property="og:site_name" content="Chloneda">
+<meta property="og:description" content="注：本文出自博主：chloneda SNMP概述SNMP(Simple Network Management Protocol):简单网络管理协议,是基于TCP/IP五层协议中的应用层协议。由于其简单可靠，提供了一种监控和管理网络设备的系统方法，因此受到了众多厂商的欢迎，成为了目前最为广泛的网管协议。 SNMP的基本思想：为不同种类、厂家、型号的设备，定义一个统一的接口和协议，使得管理员可以是使用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_Structure.png">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_MessageFormat.png">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_PDUType.png">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_ErrorStatus.png">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_TrapType.png">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_fivePDU.png">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_Mib.png">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_MibInfoType.png">
+<meta property="og:image" content="https://chloneda.github.io/uploads/snmp_SMI_MIB.png">
+<meta property="og:updated_time" content="2019-07-29T15:34:38.132Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="聊聊SNMP协议">
+<meta name="twitter:description" content="注：本文出自博主：chloneda SNMP概述SNMP(Simple Network Management Protocol):简单网络管理协议,是基于TCP/IP五层协议中的应用层协议。由于其简单可靠，提供了一种监控和管理网络设备的系统方法，因此受到了众多厂商的欢迎，成为了目前最为广泛的网管协议。 SNMP的基本思想：为不同种类、厂家、型号的设备，定义一个统一的接口和协议，使得管理员可以是使用">
+<meta name="twitter:image" content="https://chloneda.github.io/uploads/snmp_Structure.png">
+
+
+
+  <link rel="alternate" href="/rss2.html" title="Chloneda" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://chloneda.github.io/blog/snmp-protocol/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>聊聊SNMP协议 | Chloneda</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chloneda</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">简约的程序员</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/snmp-protocol/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chloneda">
+      <meta itemprop="description" content="Less is more">
+      <meta itemprop="image" content="https://chloneda.github.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chloneda">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">聊聊SNMP协议
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-14 23:32:09" itemprop="dateCreated datePublished" datetime="2019-06-14T23:32:09+08:00">2019-06-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-29 23:34:38" itemprop="dateModified" datetime="2019-07-29T23:34:38+08:00">2019-07-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SNMP/" itemprop="url" rel="index"><span itemprop="name">SNMP</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>注</strong>：本文出自博主：<a href="https://chloneda.github.io/">chloneda</a></p>
+<h1 id="SNMP概述"><a href="#SNMP概述" class="headerlink" title="SNMP概述"></a>SNMP概述</h1><p>SNMP(Simple Network Management Protocol):简单网络管理协议,是基于TCP/IP五层协议中的应用层协议。由于其简单可靠，提供了一种监控和管理网络设备的系统方法，因此受到了众多厂商的欢迎，成为了目前最为广泛的网管协议。</p>
+<p>SNMP的基本思想：为不同种类、厂家、型号的设备，定义一个统一的接口和协议，使得管理员可以是使用统一的外观面对这些需要管理的网络设备。通过网络，管理员可以管理位于不同物理空间的设备，从而大大提高网络管理的效率，简化网络管理员的工作。</p>
+<h1 id="Snmp版本"><a href="#Snmp版本" class="headerlink" title="Snmp版本"></a>Snmp版本</h1><p>SNMP目前共有v1，v2，v3这三个版本，三个版本的联系与区别。</p>
+<ul>
+<li>SNMP v1：是SNMP协议的最初版本，存在较多安全缺陷，现在这个版本是使用的比较少了。 </li>
+<li>SNMP v2：也采用团体名认证,在兼容SNMPv1的同时又扩充了SNMPv1的功能，具体是扩展了数据类型、支持分布式网络管理、可以实现大量数据的传输，提高了效率和性能、丰富了故障处理能力及增加了集合处理功能。</li>
+<li>SNMP v3：是最新版本的SNMP。它相对于V2版本，在安全性上得到了重要提升，增加了对认证和密文传输的支持。</li>
+</ul>
+<h1 id="SNMP核心概念"><a href="#SNMP核心概念" class="headerlink" title="SNMP核心概念"></a>SNMP核心概念</h1><h2 id="SNMP管理架构"><a href="#SNMP管理架构" class="headerlink" title="SNMP管理架构"></a>SNMP管理架构</h2><p>SNMP管理架构应包含四个部分进行网络管理：<strong>SNMP管理站</strong>、<strong>SNMP代理</strong>、<strong>MIB(管理信息库)</strong>和<strong>SNMP管理协议</strong>。</p>
+<p><strong>SNMP管理站</strong>（management station）：通常被称作为网络管理工作站（NMS），负责收集维护各个SNMP元素的信息，通过UDP协议向SNMP代理发送各种命令，当SNMP代理收到命令后，对收集的信息进行处理，并返回SNMP管理站需要的参数。而此时被管理对象中一定要有代理进程，这样才能响应管理站发来的请求。</p>
+<p><strong>SNMP代理</strong>(Agent)：运行在各个被管理的网络节点之上，负责统计该节点的各项信息，并且负责与SNMP管理站交互，接收并执行管理站的命令，上传各种本地的网络信息。</p>
+<p><img src="/uploads/snmp_Structure.png" alt="snmp_structure"></p>
+<p><strong>注</strong>：协议栈中带有阴影的部分是原主机或路由器所具有的，而没有阴影的部分是为实现网络管理而增加的。<br>　　<br><strong>MIB(管理信息库)</strong>：是对象的集合，它代表网络中可以管理的资源和设备。每个对象基本上是一个数据变量，它代表被管理的对象的一方面的信息。</p>
+<p><strong>SNMP管理协议</strong>：用于管理站与SNMP代理之间的通信规则，其SNMP报文格式请查看底下章节。</p>
+<p>管理站和代理之间利用 SNMP 报文进行通信，而 SNMP 报文又使用 UDP协议来传送，由于采用UDP协议，不需要在代理和管理站之间保持连接。
+　</p>
+<h2 id="SNMP报文格式"><a href="#SNMP报文格式" class="headerlink" title="SNMP报文格式"></a>SNMP报文格式</h2><p>管理站（NMS）和代理（Agent）之间交换的管理信息构成了SNMP报文，报文的基本格式如下图：</p>
+<p><img src="/uploads/snmp_MessageFormat.png" alt="snmp_MessageFormat.png"></p>
+<p><strong>下面将对该SNMP报文格式逐个进行说明！</strong></p>
+<p>SNMP消息报文包含两个部分：SNMP报头和PDU(协议数据单元)。</p>
+<p><strong>SNMP报头</strong></p>
+<ul>
+<li>版本：版本号字段，规则为版本号减 1，如SNMP V1则应写入 0。如果SNMP代理使用不相同的协议，会直接抛弃与自己协议版本不同的数据报。</li>
+<li>共同体(community)：即团体名，作为管理进程和代理进程之间的明文口令，相当于密码，默认为public，该字段可读可写，用来限制NMS对Agent的访问。如果团体名没有得到NMS/Agent的认可，该报文将被丢弃。</li>
+<li>PDU 类型：填入 0～4 中的一个数字，其对应关系如图。</li>
+</ul>
+<p><img src="/uploads/snmp_PDUType.png" alt="snmp_PDUType.png"></p>
+<p>PDU类型请参考<strong>PDU(协议数据单元)</strong>章节！</p>
+<p><strong>Get/Set 首部</strong></p>
+<ul>
+<li>请求标识符(request ID)，这是由管理进程设置的一个整数值。代理进程在发送 get-response 报文时也要返回此请求标识符。管理进程可同时向许多代理发出 get 报文，这些报文都使用 UDP 传送，先发送的有可能后到达。设置了请求标识符可使管理进程能够识别返回的响应报文对于哪一个请求。</li>
+<li>差错状态（error status）：由代理进程回答时填入 0～5 中的一个数字，见表 3 的描述。</li>
+</ul>
+<p><img src="/uploads/snmp_ErrorStatus.png" alt="snmp_ErrorStatus.png"></p>
+<ul>
+<li>差错索引(error index)：当出现 noSuchName、badValue 或 readOnly 的差错时，由代理进程在回答时设置的一个整数，它指明有差错的变量在变量列表中的偏移。</li>
+</ul>
+<p><strong>Trap 首部</strong></p>
+<ul>
+<li>企业（enterprise）：填入 trap 报文的网络设备的对象标识符。此对象标识符肯定是在图 3 的对象命名树上的 enterprise 结点{1.3.6.1.4.1}下面的一棵子树上。</li>
+<li>Trap 类型：此字段正式的名称是 generic-trap，共分为表 4 中的 7 种。</li>
+</ul>
+<p><img src="/uploads/snmp_TrapType.png" alt="snmp_TrapType.png"> </p>
+<p>当使用上述类型 2、3、5 时，在报文后面变量部分的第一个变量应标识响应的接口。</p>
+<ul>
+<li>特定代码(specific-code)：指明代理自定义的时间（若 trap 类型为 6），否则为 0。</li>
+<li>时间戳(timestamp)：指明自代理进程初始化到 trap 报告的事件发生所经历的时间，单位为 10ms。例如时间戳为 1908 表明在代理初始化后 1908ms 发生了该时间。</li>
+<li>变量绑定(variable-bindings)：指明一个或多个变量的名和对应的值。在 get 或 get-next 报文中，变量的值应忽略。</li>
+</ul>
+<h2 id="PDU-协议数据单元"><a href="#PDU-协议数据单元" class="headerlink" title="PDU(协议数据单元)"></a>PDU(协议数据单元)</h2><p>SNMP v1 版本规定了 5 种核心 PDU(协议数据单元)，用来在管理进程和代理之间信息的交换。</p>
+<ul>
+<li>get-request 操作：从代理进程处提取一个OID值。</li>
+<li>get-next-request 操作：从代理进程(MIB中)处提取紧跟当前参数值的下一个OID值，常被用于检索表数据，也被用于不能指定名称的变量,可以浏览MIB树。</li>
+<li>set-request 操作：设置代理进程的一个或多个参数值。</li>
+<li>get-response 操作：返回的一个或多个参数值。这个操作是由代理进程发出的，它是前面三种操作的响应操作。</li>
+<li>trap 操作：代理进程主动发出的报文，通知管理进程有某些事情发生。</li>
+</ul>
+<p>前面的 3 种操作是由管理进程向代理进程发出的，后面的 2 个操作是代理进程发给管理进程的，其中代理进程端是用 161 端口接收 get 或 set 报文，而在管理进程端是用 162 端口来接收 trap 报文。</p>
+<p><img src="/uploads/snmp_fivePDU.png" alt="snmp_fivePDU.png"> </p>
+<p>另外，在SNMP v2版本又增加了 3 种PDU(协议数据单元)，它们分别是：</p>
+<ul>
+<li>inform-request 操作：允许路由器向SNMP管理器发送通知请求。</li>
+<li>getBulk-request 操作：从代理进程处提取多个参数值,该操作会根据最大重试值执行一连串的GetNext操作，减少管理站与代理之间的交互,提高效率。</li>
+<li>report 操作：</li>
+</ul>
+<h3 id="SNMP的操作类型"><a href="#SNMP的操作类型" class="headerlink" title="SNMP的操作类型"></a>SNMP的操作类型</h3><p>其实上述 8 种PDU(协议数据单元)按照功能不同，可以归结为三类操作。</p>
+<ul>
+<li>查询、设置SNMP变量,如get-request、get-next-request、set-request、getBulk-request、inform-request。</li>
+<li>应答请求,如 get-response。</li>
+<li>事件报告，如trap。</li>
+</ul>
+<p>实际上，在SNMP中，SNMP管理站对被管理设备的SNMP变量的操作只能有 <strong>读</strong> 与 <strong>写</strong> 两种基本动作。</p>
+<h2 id="ASN-1-抽象语法标记"><a href="#ASN-1-抽象语法标记" class="headerlink" title="ASN.1(抽象语法标记)"></a>ASN.1(抽象语法标记)</h2><p>ASN.1：高级的数据描述语言。描述数据的类型、结构、组织、及编码方法。包括符号和语法两部分。SNMP使用ASN.1描述PDU和MIB(管理信息库)。</p>
+<p>关于ASN.1详细信息请查看这篇博文：<a href="http://blog.chinaunix.net/uid-23069658-id-3251526.html" target="_blank" rel="noopener">SNMP从入门到开发：进阶篇</a></p>
+<h2 id="BER-基本编码规则"><a href="#BER-基本编码规则" class="headerlink" title="BER(基本编码规则)"></a>BER(基本编码规则)</h2><p><strong>BER(Basic Encoding Rule)</strong>，中文名称：基本编码规则。描述具体的ASN.1对象如何编码为比特流在网络上传输。SNMP使用BER(Basic Encoding Rule)作为编码方案，数据首先先经过BER编码，再经由传输层协议(一边是UDP)发往接收方。接收方在SNMP端口上收到PDU后，经过BER解码后，得到具体的SNMP操作数据。</p>
+<p>BER的数据都由三个域构成:标识域(tag)+长度域(length)+值域(value)。</p>
+<h2 id="SMI-管理信息结构"><a href="#SMI-管理信息结构" class="headerlink" title="SMI(管理信息结构)"></a>SMI(管理信息结构)</h2><p><strong>SMI(Structure of Managerment Intormation)</strong>，中文名称：管理信息结构，是SNMP的描述方法。规定了使用ASN.1子类型、符号。ASN.1功能强大，但SNMP只用到了其中很小一部分，对于这一部分内容的描述，限定了范围，即为SMI。SMI规定了使用到的ASN.1类型、宏、符号等。SMI是ASN.1的一个子集和超集。</p>
+<h2 id="MIB-管理信息库"><a href="#MIB-管理信息库" class="headerlink" title="MIB(管理信息库)"></a>MIB(管理信息库)</h2><p><strong>MIB(Management Information Base)</strong>，中文名称：管理信息库，由网络管理协议访问的管理对象数据库。MIB是对象的集合，它代表网络中可以管理的资源和设备。每个对象基本上是一个数据变量，它代表被管理的对象的一方面的信息。</p>
+<p>管理信息库 MIB 指明了网络元素所维持的变量（即能够被管理进程查询和设置的信息）。MIB 给出了一个网络中所有可能的被管理对象的集合的数据结构。SNMP 的管理信息库采用和域名系统 DNS 相似的树型结构，它的根在最上面，根没有名字。底下的图 画的是管理信息库的一部分，它又称为对象命名（object naming tree）。</p>
+<p>MIB采用分层树形结构，对象命名树的顶级对象有三个，即 ISO、ITU-T 和这两个组织的联合体。在 ISO 的下面有 4 个结点，其中的饿一个（标号 3）是被标识的组织。在其下面有一个美国国防部（Department of Defense）的子树（标号是 6），再下面就是 Internet（标号是 1）。在只讨论 Internet 中的对象时，可只画出 Internet 以下的子树（图中带阴影的虚线方框），并在 Internet 结点旁边标注上{1.3.6.1}即可。</p>
+<p>在 Internet 结点下面的第二个结点是 mgmt（管理），标号是 2。再下面是管理信息库，原先的结点名是 mib。1991 年定义了新的版本 MIB-II，故结点名现改为 mib-2，其标识为{1.3.6.1.2.1}，或{Internet(1) .2.1}。这种标识为对象标识符。</p>
+<p><img src="/uploads/snmp_Mib.png" alt="snmp_Mib.png"></p>
+<p>最初的结点 mib 将其所管理的信息分为 8 个类别，如图，现在的 mib-2 所包含的信息类别已超过 40 个。</p>
+<p><img src="/uploads/snmp_MibInfoType.png" alt="snmp_MibInfoType.png"></p>
+<p>应当指出，MIB 的定义与具体的网络管理协议无关，这对于厂商和用户都有利。厂商可以在产品（如路由器）中包含 SNMP 代理软件，并保证在定义新的 MIB 项目后该软件仍遵守标准。用户可以使用同一网络管理客户软件来管理具有不同版本的 MIB 的多个路由器。当然，一个没有新的 MIB 项目的路由器不能提供这些项目的信息。这里要提一下MIB中的对象{1.3.6.1.4.1}，即enterprises（企业），其所属结点数已超过 3000。例如IBM为{1.3.6.1.4.1.2}，Cisco为{1.3.6.1.4.1.9}，Novell为{1.3.6.1.4.1.23}等。世界上任何一个公司、学校只要用电子邮件发往<a href="mailto:iana-mib@isi.edu" target="_blank" rel="noopener">iana-mib@isi.edu</a>进行申请即可获得一个结点名。这样各厂家就可以定义自己的产品的被管理对象名，使它能用SNMP进行管理。</p>
+<h2 id="ASN-1、BER、SMI、MIB、PDU的关系"><a href="#ASN-1、BER、SMI、MIB、PDU的关系" class="headerlink" title="ASN.1、BER、SMI、MIB、PDU的关系"></a>ASN.1、BER、SMI、MIB、PDU的关系</h2><p>关于ASN.1、BER、SMI、MIB、PDU的关系如下图所示。<br><img src="/uploads/snmp_SMI_MIB.png" alt="snmp_SMI_MIB.png"></p>
+<h2 id="OID-对象标识符"><a href="#OID-对象标识符" class="headerlink" title="OID(对象标识符)"></a>OID(对象标识符)</h2><p><strong>OID(Object Identifier)</strong>，中文名称：对象标识符，被管理设备的每个管理资源和对象都有自己的OID(Object Identifier)，管理对象通过树状结构进行组织，OID由树上的一系列整数组成，整数之间用点( . )分隔开，树的叶子节点才是真正能够被管理的对象。</p>
+<h3 id="常用OID"><a href="#常用OID" class="headerlink" title="常用OID"></a>常用OID</h3><p>这里总结了一些常用的OID，当需要时可以及时查询。<br><a href="http://oid-info.com/cgi-bin/display?tree=1.3.6" target="_blank" rel="noopener">SNMP监控常用OID查询</a><br><a href="https://blog.csdn.net/a9254778/article/details/51200502" target="_blank" rel="noopener">SNMP监控一些常用OID的总结</a><br><a href="http://www.oidview.com/mibs/2021/UCD-SNMP-MIB.html" target="_blank" rel="noopener">下载不同厂商的MIB包</a><br><a href="https://www.alvestrand.no/objectid/1.3.6.1.4.1.html" target="_blank" rel="noopener">查看不同厂商的OID代号</a></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>SNMP支持Window、Linux、MacOS系统的安装，关于SNMP的安装步骤请自行查询。</p>
+<hr>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是对我最大的鼓励</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="chloneda 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="chloneda 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>chloneda</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://chloneda.github.io/blog/snmp-protocol/" title="聊聊SNMP协议">https://chloneda.github.io/blog/snmp-protocol/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SNMP/" rel="tag"># SNMP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/mybatis-8/" rel="next" title="深入浅出Mybatis系列八-mapper映射文件配置之select、resultMap">
+                <i class="fa fa-chevron-left"></i> 深入浅出Mybatis系列八-mapper映射文件配置之select、resultMap
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/git-to-github-gitee/" rel="prev" title="git同步代码至github和gitee(码云)">
+                git同步代码至github和gitee(码云) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://chloneda.github.io/images/avatar.jpg" alt="chloneda">
+            
+              <p class="site-author-name" itemprop="name">chloneda</p>
+              <p class="site-description motion-element" itemprop="description">Less is more</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/rss2.html" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/chloneda" title="GitHub &rarr; https://github.com/chloneda" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/chloneda" title="Twitter &rarr; https://twitter.com/chloneda" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:chloneda@gmail.com" title="E-Mail &rarr; mailto:chloneda@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/chloneda" title="Weibo &rarr; https://weibo.com/chloneda" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://www.zhihu.com/people/chl_vip" title="知乎 &rarr; http://www.zhihu.com/people/chl_vip" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>知乎</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.cnblogs.com/chloneda" title="博客园 &rarr; https://www.cnblogs.com/chloneda" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>博客园</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+
+	  <div id="music163player">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5239700&auto=0&height=66"></iframe>
+	  </div>
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SNMP概述"><span class="nav-number">1.</span> <span class="nav-text">SNMP概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Snmp版本"><span class="nav-number">2.</span> <span class="nav-text">Snmp版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SNMP核心概念"><span class="nav-number">3.</span> <span class="nav-text">SNMP核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SNMP管理架构"><span class="nav-number">3.1.</span> <span class="nav-text">SNMP管理架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SNMP报文格式"><span class="nav-number">3.2.</span> <span class="nav-text">SNMP报文格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDU-协议数据单元"><span class="nav-number">3.3.</span> <span class="nav-text">PDU(协议数据单元)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SNMP的操作类型"><span class="nav-number">3.3.1.</span> <span class="nav-text">SNMP的操作类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASN-1-抽象语法标记"><span class="nav-number">3.4.</span> <span class="nav-text">ASN.1(抽象语法标记)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BER-基本编码规则"><span class="nav-number">3.5.</span> <span class="nav-text">BER(基本编码规则)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SMI-管理信息结构"><span class="nav-number">3.6.</span> <span class="nav-text">SMI(管理信息结构)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MIB-管理信息库"><span class="nav-number">3.7.</span> <span class="nav-text">MIB(管理信息库)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASN-1、BER、SMI、MIB、PDU的关系"><span class="nav-number">3.8.</span> <span class="nav-text">ASN.1、BER、SMI、MIB、PDU的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OID-对象标识符"><span class="nav-number">3.9.</span> <span class="nav-text">OID(对象标识符)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用OID"><span class="nav-number">3.9.1.</span> <span class="nav-text">常用OID</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chloneda</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  
+  <script>
+    (function () {
+
+      firebase.initializeApp({
+        apiKey: '',
+        projectId: ''
+      })
+
+      function getCount(doc, increaseCount) {
+        //increaseCount will be false when not in article page
+
+        return doc.get().then(function (d) {
+          var count
+          if (!d.exists) { //has no data, initialize count
+            if (increaseCount) {
+              doc.set({
+                count: 1
+              })
+              count = 1
+            }
+            else {
+              count = 0
+            }
+          }
+          else { //has data
+            count = d.data().count
+            if (increaseCount) {
+              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
+                doc.set({ //increase count
+                  count: count + 1
+                })
+                count++
+              }
+            }
+          }
+          if (window.localStorage && increaseCount) { //mark as visited
+            localStorage.setItem(title, true)
+          }
+
+          return count
+        })
+      }
+
+      function appendCountTo(el) {
+        return function (count) {
+          $(el).append(
+            $('<span>').addClass('post-visitors-count').append(
+              $('<span>').addClass('post-meta-divider').text('|')
+            ).append(
+              $('<span>').addClass('post-meta-item-icon').append(
+                $('<i>').addClass('fa fa-users')
+              )
+              ).append($('<span>').text('阅读次数 ' + count))
+          )
+        }
+      }
+
+      var db = firebase.firestore()
+      var articles = db.collection('articles')
+
+      //https://hexo.io/docs/variables.html
+      var isPost = '聊聊SNMP协议'.length > 0
+      var isArchive = '' === 'true'
+      var isCategory = ''.length > 0
+      var isTag = ''.length > 0
+
+      if (isPost) { //is article page
+        var title = '聊聊SNMP协议'
+        var doc = articles.doc(title)
+
+        getCount(doc, true).then(appendCountTo($('.post-meta')))
+      }
+      else if (!isArchive && !isCategory && !isTag) { //is index page
+        var titles = [] //array to titles
+
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
+        eval(postsstr)
+
+        var promises = titles.map(function (title) {
+          return articles.doc(title)
+        }).map(function (doc) {
+          return getCount(doc)
+        })
+        Promise.all(promises).then(function (counts) {
+          var metas = $('.post-meta')
+          counts.forEach(function (val, idx) {
+            appendCountTo(metas[idx])(val)
+          })
+        })
+      }
+    })()
+  </script>
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

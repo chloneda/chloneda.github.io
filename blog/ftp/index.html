@@ -96,20 +96,20 @@
 
 
 
-  <meta name="description" content="安装用apt-get工具安装vsftpd1$ sudo apt-get install vsftpd 检查FTP端口是否已经打开1$ netstat -tnl　或　ps -ef | grep ftp 检查FTP服务是否开启1$ service vsftpd status 如果FTP服务已经开启，则会显示如下信息，由Active关键词可知FTP服务正在运行FTP启动、停止、重启、查看状态的三种方式。">
+  <meta name="description" content="注：本文出自博主：chloneda 安装用apt-get工具安装vsftpd1$ sudo apt-get install vsftpd 检查FTP端口是否已经打开1$ netstat -tnl　或　ps -ef | grep ftp 检查FTP服务是否开启1$ service vsftpd status 如果FTP服务已经开启，则会显示如下信息，由Active关键词可知FTP服务正在运行FTP启">
 <meta name="keywords" content="FTP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu中FTP安装配置及基本概念">
 <meta property="og:url" content="https://chloneda.github.io/blog/ftp/index.html">
 <meta property="og:site_name" content="Chloneda">
-<meta property="og:description" content="安装用apt-get工具安装vsftpd1$ sudo apt-get install vsftpd 检查FTP端口是否已经打开1$ netstat -tnl　或　ps -ef | grep ftp 检查FTP服务是否开启1$ service vsftpd status 如果FTP服务已经开启，则会显示如下信息，由Active关键词可知FTP服务正在运行FTP启动、停止、重启、查看状态的三种方式。">
+<meta property="og:description" content="注：本文出自博主：chloneda 安装用apt-get工具安装vsftpd1$ sudo apt-get install vsftpd 检查FTP端口是否已经打开1$ netstat -tnl　或　ps -ef | grep ftp 检查FTP服务是否开启1$ service vsftpd status 如果FTP服务已经开启，则会显示如下信息，由Active关键词可知FTP服务正在运行FTP启">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://chloneda.github.io/uploads/ftp_Status.png">
 <meta property="og:image" content="https://chloneda.github.io/uploads/ftp_Help.png">
-<meta property="og:updated_time" content="2019-05-19T14:16:14.100Z">
+<meta property="og:updated_time" content="2019-06-27T16:15:29.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu中FTP安装配置及基本概念">
-<meta name="twitter:description" content="安装用apt-get工具安装vsftpd1$ sudo apt-get install vsftpd 检查FTP端口是否已经打开1$ netstat -tnl　或　ps -ef | grep ftp 检查FTP服务是否开启1$ service vsftpd status 如果FTP服务已经开启，则会显示如下信息，由Active关键词可知FTP服务正在运行FTP启动、停止、重启、查看状态的三种方式。">
+<meta name="twitter:description" content="注：本文出自博主：chloneda 安装用apt-get工具安装vsftpd1$ sudo apt-get install vsftpd 检查FTP端口是否已经打开1$ netstat -tnl　或　ps -ef | grep ftp 检查FTP服务是否开启1$ service vsftpd status 如果FTP服务已经开启，则会显示如下信息，由Active关键词可知FTP服务正在运行FTP启">
 <meta name="twitter:image" content="https://chloneda.github.io/uploads/ftp_Status.png">
 
 
@@ -455,7 +455,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-19 22:16:14" itemprop="dateModified" datetime="2019-05-19T22:16:14+08:00">2019-05-19</time>
+                <time title="修改时间：2019-06-28 00:15:29" itemprop="dateModified" datetime="2019-06-28T00:15:29+08:00">2019-06-28</time>
               
             
           </span>
@@ -511,7 +511,8 @@
       
 
       
-        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>用apt-get工具安装vsftpd<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-<span class="builtin-name">get</span> install vsftpd</span><br></pre></td></tr></table></figure></p>
+        <p><strong>注</strong>：本文出自博主：<a href="https://chloneda.github.io/">chloneda</a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>用apt-get工具安装vsftpd<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-<span class="builtin-name">get</span> install vsftpd</span><br></pre></td></tr></table></figure></p>
 <p>检查FTP端口是否已经打开<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -tnl　或　<span class="keyword">ps</span> -ef | <span class="keyword">grep</span> ftp</span><br></pre></td></tr></table></figure></p>
 <p>检查FTP服务是否开启<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$<span class="built_in"> service </span>vsftpd status</span><br></pre></td></tr></table></figure></p>
 <p>如果FTP服务已经开启，则会显示如下信息，由<strong>Active</strong>关键词可知FTP服务正在运行<br><img src="/uploads/ftp_Status.png" alt="ftpStatus"><br>FTP启动、停止、重启、查看状态的三种方式。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ service vsftpd start|<span class="type">stop</span>|<span class="type">restart</span>|<span class="type">status</span></span><br><span class="line">$ systemctl start|<span class="type">stop</span>|<span class="type">restart</span>|<span class="type">status</span> vsftpd</span><br><span class="line">$ /etc/init.d/vsftpd start|<span class="type">stop</span>|<span class="type">restart</span>|<span class="type">status</span>|<span class="type">reload</span></span><br></pre></td></tr></table></figure></p>
@@ -730,7 +731,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -751,7 +752,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -772,7 +781,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
