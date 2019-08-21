@@ -6,9 +6,13 @@ keywords: Hexo Github
 comments: false
 ---
 # 写在前面
+**注**：本文出自博主：[chloneda](https://chloneda.github.io/)
+
 本文档是[Github](https://github.com/) + [Hexo](https://hexo.io/zh-cn/) 的搭建个人博客教程，其中Hexo基于Hexo v3.8.0版本，themes主题基于为NexT v7.0.0版本。
 
 搭建博客前置条件可参考 [如何搭建个人独立博客？](https://www.zhihu.com/question/20463581/answer/25478916)
+
+**个人博客地址： [Chloneda's blog](https://chloneda.github.io/)**
 
 **注： 点开侧栏浏览目录可快速定位内容**
 

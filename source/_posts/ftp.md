@@ -6,6 +6,8 @@ keywords: FTP
 comments: false
 ---
 
+**注**：本文出自博主：[chloneda](https://chloneda.github.io/)
+
 # 安装
 用apt-get工具安装vsftpd
 ```
