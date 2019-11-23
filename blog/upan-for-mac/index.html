@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="前言​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？ 网上的资料一般都安装第三方软件，如 NTFS for MAC 等，但一般都是收费的。或者，格式化U盘，将U盘磁盘格式设定为 FAT 或 exFAT，但个人不提倡。 现在提供一">
+  <meta name="description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？ 网上的资料一般都安装第三方软件，如 NTFS for MAC 等，但一般">
 <meta name="keywords" content="U盘">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决Mac无法写入U盘问题">
 <meta property="og:url" content="https://chloneda.github.io/blog/upan-for-mac/index.html">
 <meta property="og:site_name" content="Chloneda">
-<meta property="og:description" content="前言​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？ 网上的资料一般都安装第三方软件，如 NTFS for MAC 等，但一般都是收费的。或者，格式化U盘，将U盘磁盘格式设定为 FAT 或 exFAT，但个人不提倡。 现在提供一">
+<meta property="og:description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？ 网上的资料一般都安装第三方软件，如 NTFS for MAC 等，但一般">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://chloneda.github.io/uploads/vim_fstab.png">
-<meta property="og:updated_time" content="2019-08-21T16:59:17.426Z">
+<meta property="og:updated_time" content="2019-11-23T04:39:42.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Mac无法写入U盘问题">
-<meta name="twitter:description" content="前言​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？ 网上的资料一般都安装第三方软件，如 NTFS for MAC 等，但一般都是收费的。或者，格式化U盘，将U盘磁盘格式设定为 FAT 或 exFAT，但个人不提倡。 现在提供一">
+<meta name="twitter:description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？ 网上的资料一般都安装第三方软件，如 NTFS for MAC 等，但一般">
 <meta name="twitter:image" content="https://chloneda.github.io/uploads/vim_fstab.png">
 
 
@@ -286,6 +286,23 @@
         
         
           
+          <li class="menu-item menu-item-project">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/project/" rel="section"><i class="menu-item-icon fa fa-fw fa-github"></i> <br>项目</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -454,7 +471,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-22 00:59:17" itemprop="dateModified" datetime="2019-08-22T00:59:17+08:00">2019-08-22</time>
+                <time title="修改时间：2019-11-23 12:39:42" itemprop="dateModified" datetime="2019-11-23T12:39:42+08:00">2019-11-23</time>
               
             
           </span>
@@ -510,7 +527,8 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？</p>
+        <p><strong>注：本文出自博主 Chloneda</strong>：<a href="https://chloneda.github.io/">个人博客</a> | <a href="https://www.cnblogs.com/chloneda" target="_blank" rel="noopener">博客园</a> | <a href="https://github.com/chloneda" target="_blank" rel="noopener">Github</a> | <a href="https://gitee.com/chloneda" target="_blank" rel="noopener">Gitee</a> | <a href="https://www.zhihu.com/people/chl_vip/" target="_blank" rel="noopener">知乎</a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？</p>
 <p>网上的资料一般都安装第三方软件，如 <strong>NTFS for MAC</strong> 等，但一般都是收费的。或者，格式化U盘，将U盘磁盘格式设定为 <strong>FAT</strong> 或 <strong>exFAT</strong>，但个人不提倡。</p>
 <p>现在提供一种方法进行开启 Mac OS 读写 NTFS格式 U盘的功能。经过测试！</p>
 <h1 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h1><p><strong>1</strong>、打开 终端，输入：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil <span class="built_in">list</span></span><br></pre></td></tr></table></figure></p>
@@ -628,6 +646,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/blog/es-shell/" rel="prev" title="Elasticsearch启动、停止脚本">
+                Elasticsearch启动、停止脚本 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -694,7 +716,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -723,7 +745,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -752,7 +782,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

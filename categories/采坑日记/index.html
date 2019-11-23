@@ -283,6 +283,23 @@
         
         
           
+          <li class="menu-item menu-item-project">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/project/" rel="section"><i class="menu-item-icon fa fa-fw fa-github"></i> <br>项目</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -331,6 +348,9 @@
     
 
     
+    
+      
+      
     
       
       
@@ -410,6 +430,32 @@
         <h2>采坑日记<small>分类</small>
         </h2>
       </div>
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+          <a class="post-title-link" href="/blog/es-shell/" itemprop="url">
+            
+              <span itemprop="name">Elasticsearch启动、停止脚本</span>
+            
+          </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-09-07T00:08:21+08:00" content="2019-09-07">
+          09-07
+        </time>
+      </div>
+
+    </header>
+  </article>
+
 
       
         
@@ -515,7 +561,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -544,7 +590,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -573,7 +627,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1254,7 +1316,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("解决Mac无法写入U盘问题");titles.push("Docker容器Centos不能使用systemctl命令问题");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Elasticsearch启动、停止脚本");titles.push("解决Mac无法写入U盘问题");titles.push("Docker容器Centos不能使用systemctl命令问题");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {

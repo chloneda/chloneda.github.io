@@ -284,6 +284,23 @@
         
         
           
+          <li class="menu-item menu-item-project">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/project/" rel="section"><i class="menu-item-icon fa fa-fw fa-github"></i> <br>项目</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -505,7 +522,7 @@
 <p>的确，从表面上来看，就是多了个where标签而已， 不过实质上， mybatis是对它做了处理，当它遇到AND或者OR这些，它知道怎么处理。其实我们可以通过 trim 标签去自定义这种处理规则。</p>
 <h1 id="trim-我的地盘，我做主"><a href="#trim-我的地盘，我做主" class="headerlink" title="trim:我的地盘，我做主"></a>trim:我的地盘，我做主</h1><p>上面的where标签，其实用trim 可以表示如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">trim</span> <span class="attr">prefix</span>=<span class="string">"WHERE"</span> <span class="attr">prefixOverrides</span>=<span class="string">"AND |OR "</span>&gt;</span></span><br><span class="line">  ... </span><br><span class="line"><span class="tag">&lt;/<span class="name">trim</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>它的意思就是： 当WHERE后紧随AND或则OR的时候，就去除AND或者OR。 除了WHERE以外， 其实还有一个比较经典的实现，那就是SET。</p>
-<h1 id="set-信我，不出错"><a href="#set-信我，不出错" class="headerlink" title="set: 信我，不出错"></a>set: 信我，不出错</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;update id=<span class="string">"updateUser"</span> parameterType=<span class="string">"com.dy.entity.User"</span>&gt;</span><br><span class="line">           update user <span class="built_in">set</span> </span><br><span class="line">           &lt;<span class="keyword">if</span> <span class="built_in">test</span>=<span class="string">"name != null"</span>&gt;</span><br><span class="line">               name = <span class="comment">#&#123;name&#125;,</span></span><br><span class="line">           &lt;/<span class="keyword">if</span>&gt; </span><br><span class="line">           &lt;<span class="keyword">if</span> <span class="built_in">test</span>=<span class="string">"password != null"</span>&gt;</span><br><span class="line">               password = <span class="comment">#&#123;password&#125;,</span></span><br><span class="line">           &lt;/<span class="keyword">if</span>&gt; </span><br><span class="line">           &lt;<span class="keyword">if</span> <span class="built_in">test</span>=<span class="string">"age != null"</span>&gt;</span><br><span class="line">               age = <span class="comment">#&#123;age&#125;</span></span><br><span class="line">           &lt;/<span class="keyword">if</span>&gt; </span><br><span class="line">           &lt;<span class="built_in">where</span>&gt;</span><br><span class="line">               &lt;<span class="keyword">if</span> <span class="built_in">test</span>=<span class="string">"id != null"</span>&gt;</span><br><span class="line">                   id = <span class="comment">#&#123;id&#125;</span></span><br><span class="line">               &lt;/<span class="keyword">if</span>&gt;</span><br><span class="line">               and deleteFlag = 0;</span><br><span class="line">           &lt;/<span class="built_in">where</span>&gt;</span><br><span class="line">&lt;/update&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="set-信我，不出错"><a href="#set-信我，不出错" class="headerlink" title="set: 信我，不出错"></a>set: 信我，不出错</h1><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;update <span class="built_in">id</span>=<span class="string">"updateUser"</span> parameterType=<span class="string">"com.dy.entity.User"</span>&gt;</span><br><span class="line">           update user <span class="keyword">set</span> </span><br><span class="line">           &lt;<span class="keyword">if</span> test=<span class="string">"name != null"</span>&gt;</span><br><span class="line">               <span class="built_in">name</span> = <span class="comment">#&#123;name&#125;,</span></span><br><span class="line">           &lt;/<span class="keyword">if</span>&gt; </span><br><span class="line">           &lt;<span class="keyword">if</span> test=<span class="string">"password != null"</span>&gt;</span><br><span class="line">               password = <span class="comment">#&#123;password&#125;,</span></span><br><span class="line">           &lt;/<span class="keyword">if</span>&gt; </span><br><span class="line">           &lt;<span class="keyword">if</span> test=<span class="string">"age != null"</span>&gt;</span><br><span class="line">               age = <span class="comment">#&#123;age&#125;</span></span><br><span class="line">           &lt;/<span class="keyword">if</span>&gt; </span><br><span class="line">           &lt;<span class="keyword">where</span>&gt;</span><br><span class="line">               &lt;<span class="keyword">if</span> test=<span class="string">"id != null"</span>&gt;</span><br><span class="line">                   <span class="built_in">id</span> = <span class="comment">#&#123;id&#125;</span></span><br><span class="line">               &lt;/<span class="keyword">if</span>&gt;</span><br><span class="line">               <span class="keyword">and</span> deleteFlag = <span class="number">0</span>;</span><br><span class="line">           &lt;/<span class="keyword">where</span>&gt;</span><br><span class="line">&lt;/update&gt;</span><br></pre></td></tr></table></figure>
 <p>问题又来了： “如果我只有name不为null,  那么这SQL不就成了 update set name = #{name}, where …….. ?  你那name后面那逗号会导致出错啊！”</p>
 <p>是的，这时候，就可以用mybatis为我们提供的set 标签了。下面是通过set标签改造后：<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"updateUser"</span> <span class="attr">parameterType</span>=<span class="string">"com.dy.entity.User"</span>&gt;</span></span></span><br><span class="line"><span class="xml">           update user</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">set</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"name != null"</span>&gt;</span>name = #</span><span class="template-variable">&#123;name&#125;</span><span class="xml">,<span class="tag">&lt;/<span class="name">if</span>&gt;</span> </span></span><br><span class="line"><span class="xml">             <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"password != null"</span>&gt;</span>password = #</span><span class="template-variable">&#123;password&#125;</span><span class="xml">,<span class="tag">&lt;/<span class="name">if</span>&gt;</span> </span></span><br><span class="line"><span class="xml">             <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"age != null"</span>&gt;</span>age = #</span><span class="template-variable">&#123;age&#125;</span><span class="xml">,<span class="tag">&lt;/<span class="name">if</span>&gt;</span> </span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">set</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">where</span>&gt;</span></span></span><br><span class="line"><span class="xml">             <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"id != null"</span>&gt;</span></span></span><br><span class="line"><span class="xml">                   id = #</span><span class="template-variable">&#123;id&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">             <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span></span><br><span class="line"><span class="xml">             	   and deleteFlag = 0;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">update</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <p>这个用trim 可表示为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">trim</span> <span class="attr">prefix</span>=<span class="string">"SET"</span> <span class="attr">suffixOverrides</span>=<span class="string">","</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">trim</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -604,8 +621,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/mybatis-8/" rel="next" title="深入浅出Mybatis系列八-mapper映射文件配置之select、resultMap">
-                <i class="fa fa-chevron-left"></i> 深入浅出Mybatis系列八-mapper映射文件配置之select、resultMap
+              <a href="/blog/mybatis-5/" rel="next" title="深入浅出Mybatis系列五-TypeHandler简介及配置（mybatis源码篇）">
+                <i class="fa fa-chevron-left"></i> 深入浅出Mybatis系列五-TypeHandler简介及配置（mybatis源码篇）
               </a>
             
           </div>
@@ -614,8 +631,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/mybatis-6/" rel="prev" title="深入浅出Mybatis系列六-objectFactory、plugins、mappers简介与配置">
-                深入浅出Mybatis系列六-objectFactory、plugins、mappers简介与配置 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/snmp-protocol/" rel="prev" title="聊聊SNMP协议">
+                聊聊SNMP协议 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -684,7 +701,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -713,7 +730,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -742,7 +767,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

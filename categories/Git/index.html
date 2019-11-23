@@ -283,6 +283,23 @@
         
         
           
+          <li class="menu-item menu-item-project">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/project/" rel="section"><i class="menu-item-icon fa fa-fw fa-github"></i> <br>项目</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -331,6 +348,9 @@
     
 
     
+    
+      
+      
     
       
       
@@ -419,6 +439,32 @@
 
       <h3 class="post-title">
         
+          <a class="post-title-link" href="/blog/git-rm/" itemprop="url">
+            
+              <span itemprop="name">git rm与git rm -cached的区别</span>
+            
+          </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-10-14T22:45:29+08:00" content="2019-10-14">
+          10-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
           <a class="post-title-link" href="/blog/git-to-github-gitee/" itemprop="url">
             
               <span itemprop="name">git同步代码至github和gitee(码云)</span>
@@ -489,7 +535,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -518,7 +564,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -547,7 +601,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1228,7 +1290,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("git同步代码至github和gitee(码云)");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("git rm与git rm -cached的区别");titles.push("git同步代码至github和gitee(码云)");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
