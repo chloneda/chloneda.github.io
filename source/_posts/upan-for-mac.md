@@ -1,10 +1,11 @@
----
 title: 解决Mac无法写入U盘问题
 tags: 采坑日记
 categories: 采坑日记
 keywords: U盘
 comments: false
 ---
+
+**注：本文出自博主 Chloneda**：[个人博客](https://chloneda.github.io/) | [博客园](https://www.cnblogs.com/chloneda) | [Github](https://github.com/chloneda) | [Gitee](https://gitee.com/chloneda) | [知乎](https://www.zhihu.com/people/chl_vip/)
 
 # 前言
 ​   新手使用MacBook Pro时，会发现Mac系统下只能读取U盘，但不能写入。其实这个问题是因为，Mac OS系统硬盘格式为HFS， Windows 的硬盘格式为 NTFS，二者互不兼容。那么有没有解决的办法呢？

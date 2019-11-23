@@ -5,7 +5,7 @@ categories: Git
 keywords: Git
 comments: false
 ---
-**注**：本文出自博主：[chloneda](https://chloneda.github.io/)
+**注：本文出自博主 Chloneda**：[个人博客](https://chloneda.github.io/) | [博客园](https://www.cnblogs.com/chloneda) | [Github](https://github.com/chloneda) | [Gitee](https://gitee.com/chloneda) | [知乎](https://www.zhihu.com/people/chl_vip/)
 
 我们有时候开发代码需要把代码同步到多个远程库中，如何操作才能做到呢？
 

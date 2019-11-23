@@ -140,10 +140,11 @@ exturl: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  #reading: /reading/ || book
+  # reading: /reading/ || book
   archives: /archives/ || archive
   categories: /categories/ || th
   tags: /tags/ || tags
+  project: /project/ || github
   about: /about/ || user
   links: /links/ || link 
   

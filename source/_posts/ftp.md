@@ -6,7 +6,7 @@ keywords: FTP
 comments: false
 ---
 
-**注**：本文出自博主：[chloneda](https://chloneda.github.io/)
+**注：本文出自博主 Chloneda**：[个人博客](https://chloneda.github.io/) | [博客园](https://www.cnblogs.com/chloneda) | [Github](https://github.com/chloneda) | [Gitee](https://gitee.com/chloneda) | [知乎](https://www.zhihu.com/people/chl_vip/)
 
 # 安装
 用apt-get工具安装vsftpd

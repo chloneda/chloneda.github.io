@@ -5,7 +5,7 @@ categories: SNMP
 keywords: SNMP
 comments: false
 ---
-**注**：本文出自博主：[chloneda](https://chloneda.github.io/)
+**注：本文出自博主 Chloneda**：[个人博客](https://chloneda.github.io/) | [博客园](https://www.cnblogs.com/chloneda) | [Github](https://github.com/chloneda) | [Gitee](https://gitee.com/chloneda) | [知乎](https://www.zhihu.com/people/chl_vip/)
 
 # SNMP概述
 SNMP(Simple Network Management Protocol):简单网络管理协议,是基于TCP/IP五层协议中的应用层协议。由于其简单可靠，提供了一种监控和管理网络设备的系统方法，因此受到了众多厂商的欢迎，成为了目前最为广泛的网管协议。

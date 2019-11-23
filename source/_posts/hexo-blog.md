@@ -6,7 +6,7 @@ keywords: Hexo Github
 comments: false
 ---
 # 写在前面
-**注**：本文出自博主：[chloneda](https://chloneda.github.io/)
+**注：本文出自博主 Chloneda**：[个人博客](https://chloneda.github.io/) | [博客园](https://www.cnblogs.com/chloneda) | [Github](https://github.com/chloneda) | [Gitee](https://gitee.com/chloneda) | [知乎](https://www.zhihu.com/people/chl_vip/)
 
 本文档是[Github](https://github.com/) + [Hexo](https://hexo.io/zh-cn/) 的搭建个人博客教程，其中Hexo基于Hexo v3.8.0版本，themes主题基于为NexT v7.0.0版本。
 
@@ -126,6 +126,23 @@ menu:
   categories: /categories/ || th
   tags: /tags/ || tags
   about: /about/ || user
+```
+
+## 新添菜单翻译对应的中文
+
+打开 **hexo>theme>next>languages>zh-CN.yml** 文件，在menu下添加 **tags: 标签**：
+```
+menu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+  search: 搜索
+  schedule: 日程表
+  sitemap: 站点地图
+  commonweal: 公益404
+  resources: 资源
 ```
 **注：添加其他页面也类似。**
 
