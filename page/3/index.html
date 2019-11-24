@@ -409,7 +409,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/mybatis-4/">
+    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/mybatis-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chloneda">
@@ -429,7 +429,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/mybatis-4/" class="post-title-link" itemprop="url">深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）</a>
+                <a href="/blog/mybatis-10/" class="post-title-link" itemprop="url">深入浅出Mybatis系列十-SQL执行流程分析（源码篇）</a>
               
             
           </h2>
@@ -454,9 +454,13 @@
                 
               
 
-              <time title="创建时间：2019-05-19 22:53:29" itemprop="dateCreated datePublished" datetime="2019-05-19T22:53:29+08:00">2019-05-19</time>
+              <time title="创建时间：2019-05-19 22:53:29 / 修改时间：22:57:05" itemprop="dateCreated datePublished" datetime="2019-05-19T22:53:29+08:00">2019-05-19</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -508,13 +512,14 @@
           
             <p>
               注：本文转载自南轲梦
-上篇文章《深入浅出Mybatis系列（三）—配置详解之properties与environments（mybatis源码篇）》 介绍了properties与environments， 本篇继续讲剩下的配置节点之一：typeAliases。 typeAliases节点主要用来设置
+最近太忙了，一直没时间继续更新博客，今天忙里偷闲继续我的Mybatis学习之旅。在前九篇中，介绍了mybatis的配置以及使用， 那么本篇将走进mybatis的源码，分析mybatis 的执行流程。
+SqlSessionFactory 与 SqlSession通过前面的章节对于
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/mybatis-4/#more" rel="contents">
+              <a class="btn" href="/blog/mybatis-10/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -739,7 +744,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/mybatis-2/">
+    <link itemprop="mainEntityOfPage" href="https://chloneda.github.io/blog/mybatis-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chloneda">
@@ -759,7 +764,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/mybatis-2/" class="post-title-link" itemprop="url">深入浅出Mybatis系列二-配置简介（mybatis源码篇）</a>
+                <a href="/blog/mybatis-3/" class="post-title-link" itemprop="url">深入浅出Mybatis系列三-配置详解之properties与environments（mybatis源码篇）</a>
               
             
           </h2>
@@ -838,14 +843,13 @@
           
             <p>
               注：本文转载自南轲梦
-上篇文章《深入浅出Mybatis系列（一）—Mybatis入门》， 写了一个Demo简单体现了一下Mybatis的流程。本次，将简单介绍一下Mybatis的配置文件：
-上次例子中，我们以 SqlSessionFactoryBuilder 去创建 SqlSessionFactor
+上篇文章《深入浅出Mybatis系列（二）—配置简介（mybatis源码篇）》我们通过对mybatis源码的简单分析，可看出，在mybatis配置文件中，在configuration根节点下面，可配置properties、typeAliases、plugins、objectFa
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/mybatis-2/#more" rel="contents">
+              <a class="btn" href="/blog/mybatis-3/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2230,7 +2234,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("深入浅出Mybatis系列四-配置详解之typeAliases别名（mybatis源码篇）");titles.push("深入浅出Mybatis系列一-Mybatis入门");titles.push("深入浅出Mybatis系列二-配置简介（mybatis源码篇）");titles.push("Github+Hexo一站式部署个人博客");titles.push("Hello Chloneda");titles.push("Ubuntu中FTP安装配置及基本概念");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("深入浅出Mybatis系列十-SQL执行流程分析（源码篇）");titles.push("深入浅出Mybatis系列一-Mybatis入门");titles.push("深入浅出Mybatis系列三-配置详解之properties与environments（mybatis源码篇）");titles.push("Github+Hexo一站式部署个人博客");titles.push("Hello Chloneda");titles.push("Ubuntu中FTP安装配置及基本概念");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
