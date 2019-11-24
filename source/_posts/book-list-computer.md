@@ -1,6 +1,6 @@
 title: 计算机技术类书籍
-tags: 杂记
-categories: 杂记
+tags: 随笔
+categories: 随笔
 keywords: books
 comments: false
 ---
