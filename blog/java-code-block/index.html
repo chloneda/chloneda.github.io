@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言Java基础系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！ 代码块分类在Java中，使用{}括起来的代码被称为代码块（Code block），根据其位置和声明的不同，可以分为：  局部代码块。 构造代码块。 同步代码块。 静态代码块。  Java代码块的核心问题是：">
+  <meta name="description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言Java系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！ 代码块分类在Java中，使用{}括起来的代码被称为代码块（Code block），根据其位置和声明的不同，可以分为：  局部代码块。 构造代码块。 同步代码块。 静态代码块。  Java代码块的核心问题是：  代">
 <meta name="keywords" content="chloneda">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础系列--代码块详解">
+<meta property="og:title" content="Java基础系列-代码块详解">
 <meta property="og:url" content="https://chloneda.github.io/blog/java-code-block/index.html">
 <meta property="og:site_name" content="Chloneda">
-<meta property="og:description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言Java基础系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！ 代码块分类在Java中，使用{}括起来的代码被称为代码块（Code block），根据其位置和声明的不同，可以分为：  局部代码块。 构造代码块。 同步代码块。 静态代码块。  Java代码块的核心问题是：">
+<meta property="og:description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言Java系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！ 代码块分类在Java中，使用{}括起来的代码被称为代码块（Code block），根据其位置和声明的不同，可以分为：  局部代码块。 构造代码块。 同步代码块。 静态代码块。  Java代码块的核心问题是：  代">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-24T08:44:48.101Z">
+<meta property="og:updated_time" content="2020-03-05T01:58:49.525Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础系列--代码块详解">
-<meta name="twitter:description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言Java基础系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！ 代码块分类在Java中，使用{}括起来的代码被称为代码块（Code block），根据其位置和声明的不同，可以分为：  局部代码块。 构造代码块。 同步代码块。 静态代码块。  Java代码块的核心问题是：">
+<meta name="twitter:title" content="Java基础系列-代码块详解">
+<meta name="twitter:description" content="注：本文出自博主 Chloneda：个人博客 | 博客园 | Github | Gitee | 知乎 前言Java系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！ 代码块分类在Java中，使用{}括起来的代码被称为代码块（Code block），根据其位置和声明的不同，可以分为：  局部代码块。 构造代码块。 同步代码块。 静态代码块。  Java代码块的核心问题是：  代">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>Java基础系列--代码块详解 | Chloneda</title>
+  <title>Java基础系列-代码块详解 | Chloneda</title>
   
 
 
@@ -414,7 +414,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chloneda">
       <meta itemprop="description" content="Less is more">
-      <meta itemprop="image" content="/images/chloneda.jpg">
+      <meta itemprop="image" content="/images/chloneda.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -426,7 +426,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Java基础系列--代码块详解
+          <h2 class="post-title" itemprop="name headline">Java基础系列-代码块详解
 
               
             
@@ -452,12 +452,24 @@
                 
               
 
-              <time title="创建时间：2019-11-24 18:31:55 / 修改时间：16:44:48" itemprop="dateCreated datePublished" datetime="2019-11-24T18:31:55+08:00">2019-11-24</time>
+              <time title="创建时间：2019-11-24 18:31:55" itemprop="dateCreated datePublished" datetime="2019-11-24T18:31:55+08:00">2019-11-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-05 09:58:49" itemprop="dateModified" datetime="2020-03-05T09:58:49+08:00">2020-03-05</time>
               
             
           </span>
@@ -514,7 +526,7 @@
 
       
         <p><strong>注：本文出自博主 Chloneda</strong>：<a href="https://chloneda.github.io/">个人博客</a> | <a href="https://www.cnblogs.com/chloneda" target="_blank" rel="noopener">博客园</a> | <a href="https://github.com/chloneda" target="_blank" rel="noopener">Github</a> | <a href="https://gitee.com/chloneda" target="_blank" rel="noopener">Gitee</a> | <a href="https://www.zhihu.com/people/chl_vip/" target="_blank" rel="noopener">知乎</a></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>Java基础系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！</strong></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>Java系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！</strong></p>
 <h1 id="代码块分类"><a href="#代码块分类" class="headerlink" title="代码块分类"></a>代码块分类</h1><p>在Java中，使用{}括起来的代码被称为代码块（Code block），根据其位置和声明的不同，可以分为：</p>
 <ul>
 <li>局部代码块。</li>
@@ -541,7 +553,7 @@
 <p>也就是说，构造代码块中定义的是不同对象共性的初始化内容。</p>
 <h1 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h1><p>同步代码块指的是被Java中Synchronized关键词修饰的代码块，在Java中，Synchronized关键词不仅仅可以用来修饰代码块，与此同时也可以用来修饰方法，是一种线程同步机制，被Synchronized关键词修饰的代码块会被加上内置锁。</p>
 <p>需要说明的是Synchronized同步代码块是一种高开销的操作，因此我们应该尽量减少被同步的内容，在很多场景，我们没有必要去同步整个方法，而只需要同步部分代码即可，也就是使用同步代码块（JDK源码中有很多应用）。</p>
-<p>同步代码块示例如下。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.chloneda.jutils.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> chloneda</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 同步代码块测试</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeBlock</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">            System.out.print(<span class="string">"同步代码块!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        CodeBlock a = <span class="keyword">new</span> CodeBlock();</span><br><span class="line">        CodeBlock b = <span class="keyword">new</span> CodeBlock();</span><br><span class="line">        <span class="keyword">new</span> Thread(a).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(b).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>同步代码块示例如下。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.chloneda.jutils.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> chloneda</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 同步代码块测试</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeBlock</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (CodeBlock.class) &#123;</span><br><span class="line">            System.out.print(<span class="string">"同步代码块!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        CodeBlock a = <span class="keyword">new</span> CodeBlock();</span><br><span class="line">        CodeBlock b = <span class="keyword">new</span> CodeBlock();</span><br><span class="line">        <span class="keyword">new</span> Thread(a).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(b).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>此外，静态代码是属于类而不是属于对象的，因此使用Synchronized来修饰静态方法和静态对象的时候，类下的所有对象都会被锁定。</p>
 <h1 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h1><p>在类中方法外出现，并加上static修饰，常用于给类进行初始化，在加载的时候就执行，并且静态代码块执行一次。</p>
 <h2 id="代码块执行顺序"><a href="#代码块执行顺序" class="headerlink" title="代码块执行顺序"></a>代码块执行顺序</h2><p>首先我们验证一下代码块执行顺序，示例代码如下。<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package com.chloneda.jutils.test;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @author chloneda</span></span><br><span class="line"><span class="comment"> * @description: 验证代码块执行顺序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">StatisCodeBlock</span> &#123;</span><br><span class="line">    <span class="comment">//静态代码块，在方法外出现</span></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> number1 = <span class="number">20</span>;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"1、静态代码块变量： "</span> + number1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造代码块，在方法外出现</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> number2 = <span class="number">100</span>;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"2、构造代码块变量： "</span> + number2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StatisCodeBlock</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"这是构造方法 StatisCodeBlock()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> number3 = <span class="number">200</span>;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"3、静态代码块变量： "</span> + number3);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在构造代码块在构造方法前后，但构造代码块先于构造方法执行</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> number4 = <span class="number">1000</span>;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"4、构造代码块变量： "</span> + number4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态代码块测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CodeBlockTest</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span> &#123;</span><br><span class="line">        <span class="comment">// 创建对象</span></span><br><span class="line">        StatisCodeBlock codeBlock = <span class="keyword">new</span> StatisCodeBlock();</span><br><span class="line">        <span class="comment">// 注意：构造代码块通过构造方法自动调用</span></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"======我是分割线======"</span>);</span><br><span class="line">        StatisCodeBlock codeBlock2 = <span class="keyword">new</span> StatisCodeBlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -630,7 +642,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://chloneda.github.io/blog/java-code-block/" title="Java基础系列--代码块详解">https://chloneda.github.io/blog/java-code-block/</a>
+    <a href="https://chloneda.github.io/blog/java-code-block/" title="Java基础系列-代码块详解">https://chloneda.github.io/blog/java-code-block/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -650,8 +662,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/maven-pom/" rel="next" title="pom.xml配置文件详解(Maven)！">
-                <i class="fa fa-chevron-left"></i> pom.xml配置文件详解(Maven)！
+              <a href="/blog/pattern-singleton/" rel="next" title="深入浅出设计模式系列--单例模式">
+                <i class="fa fa-chevron-left"></i> 深入浅出设计模式系列--单例模式
               </a>
             
           </div>
@@ -659,6 +671,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/hello-chloneda/" rel="prev" title="Hello Chloneda">
+                Hello Chloneda <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -713,7 +729,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/chloneda.jpg" alt="chloneda">
+              <img class="site-author-image" itemprop="image" src="/images/chloneda.jpeg" alt="chloneda">
             
               <p class="site-author-name" itemprop="name">chloneda</p>
               <p class="site-description motion-element" itemprop="description">Less is more</p>
@@ -726,7 +742,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -765,7 +781,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -804,7 +826,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -942,7 +970,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -1492,13 +1520,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/docs/variables.html
-      var isPost = 'Java基础系列--代码块详解'.length > 0
+      var isPost = 'Java基础系列-代码块详解'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'Java基础系列--代码块详解'
+        var title = 'Java基础系列-代码块详解'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
