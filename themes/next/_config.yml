@@ -231,7 +231,7 @@ avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: /images/chloneda.jpg
+  url: /images/chloneda.jpeg
   # url: #/images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
   rounded: true

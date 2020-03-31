@@ -1,5 +1,5 @@
 ---
-title: pom.xml配置文件详解(Maven)！
+title: pom.xml配置文件详解(Maven)
 tags: Maven
 categories: Maven
 keywords: Maven

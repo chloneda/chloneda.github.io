@@ -1,4 +1,4 @@
-title: Java基础系列--代码块详解
+title: Java基础系列-代码块详解
 type: "Java"
 categories: Java
 comments: false
@@ -9,7 +9,7 @@ date: 2019-11-24 18:31:55
 
 
 # 前言
-**Java基础系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！**
+**Java系列，尽量采用通俗易懂、循序渐进的方式，让大家真正理解Java基础知识！**
 
 # 代码块分类
 
@@ -128,7 +128,7 @@ package com.chloneda.jutils.test;
 public class CodeBlock implements Runnable {
     @Override
     public void run() {
-        synchronized (this) {
+        synchronized (CodeBlock.class) {
             System.out.print("同步代码块!");
         }
     }

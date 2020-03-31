@@ -21,5 +21,3 @@ date: 2019-02-23 14:38:47
 
 [个人简历](https://chloneda.github.io/files/resume.pdf)
 
-
-

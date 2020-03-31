@@ -1,6 +1,6 @@
 title: Elasticsearch启动、停止脚本
-tags: 采坑日记
-categories: 采坑日记
+tags: Elasticsearch
+categories: Elasticsearch
 keywords: elasticsearch
 comments: false
 ---

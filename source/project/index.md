@@ -11,3 +11,13 @@ date: 2019-11-23 18:31:55
 
 [spring-anything](https://github.com/chloneda/spring-anything)使用Spring相关技术即Spring Boot、Spring Cloud、Spring Security、Spring Framework和微服务等，并结合当下热门、实用技术进行集成！同时也有专题文章。欢迎Star！
 
+
+
+# [vim-cheatsheet](https://github.com/chloneda/vim-cheatsheet/)
+
+[vim-cheatsheet](https://github.com/chloneda/vim-cheatsheet/)项目是Vim命令速查表，具备简单、易记功能，帮助你快速熟悉Vim命令！
+
+
+
+------
+
